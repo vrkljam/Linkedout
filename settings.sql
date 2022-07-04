@@ -1,0 +1,3 @@
+CREATE DATABASE linko;
+CREATE USER linkouser WITH PASSWORD 'links';
+GRANT ALL PRIVILEGES ON DATABASE linko TO linkouser;
