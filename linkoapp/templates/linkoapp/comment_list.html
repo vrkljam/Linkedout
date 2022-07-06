@@ -1,0 +1,13 @@
+<h2>Comments to the post</h2>
+
+<ul>
+    {% for comment in comments%}
+    <li>
+        <p>For Post from : {{comment.post}}</p>
+        <p>Comment Content: {{comment.content}}</p>
+        <p>Author: {{comment.author}}</p>
+        <p>Date of comment: {{comment.created_date}}</p>
+        <a href="">(+) add more comments</a>
+    </li>
+    {%endfor%}
+</ul>

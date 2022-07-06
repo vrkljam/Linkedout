@@ -1,0 +1,14 @@
+<h2>Posts:</h2>
+<ul>
+    {%for post in posts%}
+    <li>
+        <a href="{{post.name_of_user}}">user name should be here</a>
+        <p>{{post.post_content}}</p>
+        <p>{{post.name_of_user}}</p>
+        <p>{{post.title}}</p>
+      
+        <p>{{post.post_date}}</p>
+    </li>
+    {%endfor%}
+</ul>
+
