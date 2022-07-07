@@ -1,0 +1,25 @@
+{% extends 'linkoapp/base.html'%}
+{%block content%}
+
+<h3>Post-Details:</h3>
+
+<p>Date of Post: {{post.post_date}}</p>
+
+<p>Name of Poster: {{post.name_of_user}}</p>
+<p>Content of Post: {{post.post_content}}</p>
+
+<a href=""><h4>Edit this Post</h4></a>
+
+<h3>Comments: <a href="">Add to comment (+)</a></h3>
+
+<!-- this is not working yet -->
+<ul>
+    {% for comment in post.comments.all %}
+    <li>
+        <a href="{%url 'comment_detail' pk=comment.pk%}">{{comment.author}}</a>
+    </li>
+    {%endfor%}
+    <h2>end for is here</h2>
+</ul>
+
+{%endblock%}

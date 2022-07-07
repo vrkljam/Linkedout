@@ -1,9 +1,12 @@
+{% extends 'linkoapp/base.html'%}
+{%block content%}
+
 <h2>Comments to the post</h2>
 
 <ul>
     {% for comment in comments%}
     <li>
-        <p>For Post from : {{comment.post}}</p>
+        <a href="{%url 'comment_detail' pk=comment.pk%}"><p>For Comment from : {{comment.author}}</p></a>
         <p>Comment Content: {{comment.content}}</p>
         <p>Author: {{comment.author}}</p>
         <p>Date of comment: {{comment.created_date}}</p>
@@ -11,3 +14,5 @@
     </li>
     {%endfor%}
 </ul>
+
+{%endblock%}
