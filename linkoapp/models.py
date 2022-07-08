@@ -1,26 +1,24 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
-# can i use the username from the sign-in/create account?
 
-# class Profile(models.Model):
-#     username=models.foreignKey(User, on.....)---would like this from the login
-      first_name
-      last_name  
-#     is_retired=models.BooleanField(default=True)
-#     previous_companies=models.TextField()
-    # email=models.EmailField()
-    # location=models.CharField(max_length=100)
-    # photo_url=models.TextField()
+class Profile(models.Model):
+
+    testing=models.ForeignKey(User, on_delete=models.CASCADE)
+    is_retired=models.BooleanField(default=True)
+    previous_companies=models.TextField()
+    location=models.CharField(max_length=100)
+    photo_url=models.TextField()
 
 
-#     def __str__(self):
-#         return self.username
+    def __str__(self):
+        return self.testing
 
 class Post(models.Model):
-    # username=models.ForeignKey(Profile, on_delete=models.CASCADE)
-    name_of_user=models.CharField(max_length=50, default='')
+    # username=models.ForeignKey(Profile, on_delete=models.CASCADE, default='1')
+    name_of_user=models.CharField(max_length=50, default='1')
     title=models.CharField(max_length=150)
     post_content=models.TextField()
     post_date=models.DateTimeField(auto_now=True)

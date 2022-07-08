@@ -4,9 +4,8 @@ from django.shortcuts import render, redirect
 from .models import Post, Comment
 # from .forms import PostForm, CommentForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-
+from django.views.generic import TemplateView, ListView
 # Functional based methods 
-def fetch ....
 
 def post_list(request):
     posts = Post.objects.all() 
@@ -76,7 +75,7 @@ def comment_detail(request,pk):
 
 # class based methods 
 
-class PostList(TemplateView):
+class PostList(ListView):
     template_name = 'post_list.html'
 
     def get_context_data(self, **kwargs):
