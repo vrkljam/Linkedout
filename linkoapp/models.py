@@ -5,10 +5,15 @@ from django.db import models
 # can i use the username from the sign-in/create account?
 
 # class Profile(models.Model):
-#     username=models.CharField(max_length=50)
+#     username=models.foreignKey(User, on.....)---would like this from the login
+      first_name
+      last_name  
 #     is_retired=models.BooleanField(default=True)
 #     previous_companies=models.TextField()
-#     email=models.EmailField()
+    # email=models.EmailField()
+    # location=models.CharField(max_length=100)
+    # photo_url=models.TextField()
+
 
 #     def __str__(self):
 #         return self.username

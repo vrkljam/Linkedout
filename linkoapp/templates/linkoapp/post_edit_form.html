@@ -1,7 +1,7 @@
 {% extends 'linkoapp/base.html'%}
 {%block content%}
 
-<h2>New Post!!</h2>
+<h2>Edit this post: {{post.title}}</h2>
 <form method="POST">
     {%csrf_token%} {{form.as_p}}
     <button type="submit">Save</button>

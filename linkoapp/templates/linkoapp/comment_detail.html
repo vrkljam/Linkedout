@@ -6,7 +6,8 @@
 <p>Date of comment: {{comment.created_date}}</p>
 <p>Comment by: {{comment.author}}</p>
 <p>What they had to say: {{comment.content}}</p>
-<a href=""><h4>Edit this comment...</h4></a>
+<a href="{% url 'comment_edit' pk=comment.pk %}"><h4>Edit this comment...</h4></a>
+<a href="{% url 'comment_delete' pk=comment.pk %}"><h4>Delete !</h4></a>
 <p>blah</p>
 
 {%endblock%}

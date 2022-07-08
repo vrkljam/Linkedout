@@ -8,7 +8,9 @@
 <p>Name of Poster: {{post.name_of_user}}</p>
 <p>Content of Post: {{post.post_content}}</p>
 
-<a href=""><h4>Edit this Post</h4></a>
+<a href="{% url 'post_edit' pk=post.pk%}"><h4>Edit this Post</h4></a>
+<a href="{% url 'post_delete' pk=post.pk%}"><h4>Delete this Post</h4></a>
+
 
 <h3>Comments: <a href="">Add to comment (+)</a></h3>
 

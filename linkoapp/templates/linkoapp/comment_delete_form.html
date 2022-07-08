@@ -1,0 +1,15 @@
+{%extends 'linkoapp/base.html'%} 
+{%block content%} 
+
+<h1>Are you sure you want to delete {{comment.post}}</h1>
+<form method="POST">
+    {%csrf_token%}
+
+        <button type="submit">Click here to delete</button>
+        <a href="{% url 'comment_detail' pk=comment.pk %}">return back</a>
+
+</form>
+
+
+
+{%endblock%}
