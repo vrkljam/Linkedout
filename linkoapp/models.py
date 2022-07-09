@@ -14,11 +14,11 @@ class Profile(models.Model):
 
 
     def __str__(self):
-        return self.testing
+        return self.location
 
 class Post(models.Model):
-    # username=models.ForeignKey(Profile, on_delete=models.CASCADE, default='1')
-    name_of_user=models.CharField(max_length=50, default='1')
+    username=models.ForeignKey(Profile, on_delete=models.CASCADE, default='User Name')
+    name_of_user=models.CharField(max_length=50)
     title=models.CharField(max_length=150)
     post_content=models.TextField()
     post_date=models.DateTimeField(auto_now=True)
@@ -27,7 +27,7 @@ class Post(models.Model):
         return self.name_of_user
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
     author = models.CharField(max_length=50)
     content=models.TextField()
     created_date=models.DateTimeField(auto_now=True)
