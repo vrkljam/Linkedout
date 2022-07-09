@@ -1,3 +1,34 @@
 * {
     background-color: green;
 }
+
+@keyframes move {
+    0% {
+        transform: translateX(0px);
+    }
+    25%{
+        transform: translateX(30px);
+    }
+    50%{
+        transform: translateX(50px);
+    }
+    75%{
+        transform: translateX(100px);
+        color: purple;
+    }
+    100%{
+        transform: translateX(150px);
+        color: red;
+    }
+    
+}
+
+#base-h1{
+    text-align: center;
+    color:orange;
+    animation-name: move;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in;
+   }
