@@ -32,3 +32,42 @@
     animation-direction: alternate;
     animation-timing-function: ease-in;
    }
+   
+#home-big-container{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid black;
+    color: pink;
+    background-color: gold;
+}
+.ref{
+    color: pink;
+}
+.new{
+    background-color: aqua;
+    border: 5px solid red;
+    display: flex;
+    flex-direction: column;
+}
+.new2{
+    border: 5px solid black;
+    height: 50px;
+    width: 50px;
+    background-color: blue;
+}
+
+.post-details-page{
+    border: 5px solid red;
+    width: 300px;
+    margin-left:50px;
+
+}
+
+.post-title{
+    text-align: center;
+    font:bold;
+    margin-top: 0;
+    
+}

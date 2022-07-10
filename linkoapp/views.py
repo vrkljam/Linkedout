@@ -2,13 +2,18 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from .models import Post, Comment, Profile
-from .forms import PostForm, CommentForm
+from .forms import PostForm, CommentForm, ProfileForm
+from django.views import View
 # from django.views.generic.edit import CreateView, UpdateView, DeleteView
-# from django.views.generic import TemplateView, ListView
+from django.views.generic.base import TemplateView
 # Functional based methods 
 
+class Home(TemplateView):
+    template_name = "linkoapp/home.html"
+
+
 def post_list(request):
-    posts = Post.objects.all() 
+    posts = Post.objects.all()
     return render (request, 'linkoapp/post_list.html', {'posts':posts})
 
 def comment_list(request):
@@ -23,6 +28,9 @@ def comment_detail(request,pk):
     comment=Comment.objects.get(id=pk)
     return render(request, 'linkoapp/comment_detail.html', {'comment':comment})
 
+# def profile_view(request):
+#     profile_form=ProfileForm()
+    
 def post_create(request):
     if request.method=='POST':
         form = PostForm(request.POST)
@@ -72,6 +80,8 @@ def post_delete(request,pk):
 def comment_delete(request,pk):
     Comment.objects.get(id=pk).delete()
     return redirect('comment_list')
+
+
 
 # class based methods 
 

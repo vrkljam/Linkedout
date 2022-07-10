@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
 
-    testing=models.ForeignKey(User, on_delete=models.CASCADE)
+    user_from_model=models.ForeignKey(User, on_delete=models.CASCADE, related_name='profile')
     is_retired=models.BooleanField(default=True)
     previous_companies=models.TextField()
     location=models.CharField(max_length=100)
@@ -14,7 +14,7 @@ class Profile(models.Model):
 
 
     def __str__(self):
-        return self.location
+        return str(self.user_from_model)
 
 class Post(models.Model):
     username=models.ForeignKey(Profile, on_delete=models.CASCADE, default='User Name')

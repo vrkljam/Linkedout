@@ -4,11 +4,13 @@ from . import views
 
 # urlpatterns for function based views
 urlpatterns = [
-    path('',views.post_list, name='post_list'),
+    path('', views.Home.as_view(), name="home"),
+    path('posts/',views.post_list, name='post_list'),
     path('comments/', views.comment_list, name='comment_list'),
 
     path('posts/<int:pk>/', views.post_detail, name='post_detail'),
     path('comments/<int:pk>/', views.comment_detail, name='comment_detail'),
+    # path('profile/', views.profile_view, name='profile_view'),
 
     path('posts/new', views.post_create, name='post_create'),
     path('comments/new', views.comment_create, name='comment_create'),

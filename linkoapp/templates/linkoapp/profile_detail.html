@@ -1,0 +1,21 @@
+{%extends 'linkoapp/base.html%}
+{%block content%} 
+<h3>Profile View:</h3>
+<p>Profile Name: {{profile.user_from_model}}</p>
+<p>Retired status: {{profile.is_retired}}</p>
+<p>Previous Companies: {{profile.previous_companies}}</p>
+<p>Location: {{profile.location}}</p>
+<p>Photo: {{profile.photo_url}}</p>
+
+<form action="" method="POST">
+    {{%csrf_token%}}
+    {{form}}
+    <input type="submit">save
+</form>
+
+<a href="">Edit this Profile</a>
+
+<a href="">Delete this Profile</a>
+
+{%endblock%} 
+

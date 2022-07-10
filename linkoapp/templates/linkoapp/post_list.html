@@ -3,19 +3,19 @@
 {%block content%}
 
 <h2>Posts:</h2>
-<h3>{{profile.testing}}</h3>
-<h3>hello</h3>
+<h3>{{profile.user_from_model}}</h3>
+<h3>hello--looking for profile info</h3>
 <h3>{{profile.is_retired}}</h3>
 
 <ul>
     {%for post in posts%}
     <li>
-        <a href="{%url 'post_detail' pk=post.pk%}"><h3>name of user: {{post.name_of_user}}</h3></a>
-        <p>post title: {{post.title}}</p>
-        <p>post content: {{post.post_content}}</p>
-        <p>name of user: {{post.name_of_user}}</p>
+        <a href="{%url 'post_detail' pk=post.pk%}"><h3>Name of user: {{post.name_of_user}}</h3></a>
+        <p>Post title: {{post.title}}</p>
+        <p>Post content: {{post.post_content}}</p>
+        <p>Name of user: {{post.username}}</p>
       
-        <p>date of post: {{post.post_date}}</p>
+        <p>Date of post: {{post.post_date}}</p>
     </li>
     {%endfor%}
 </ul>
