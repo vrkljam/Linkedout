@@ -10,9 +10,8 @@
     <title>LinkO {%block title%}{%endblock%}</title>
 </head>
 <body>
-    <h1 id="base-h1">Linked OUT!!
-        
-    </h1>
+    <h1 id="base-h1">Linked OUT!!</h1>
+    <p>A site serving those who paid their dues, And now it's time to PLAY!</p>
  
     <nav>
         <a href="/posts">User Posts</a>
@@ -20,6 +19,13 @@
         <a href="/posts/new">New Post</a>
         <a href="/comments/new">New Comment</a>
         <a href="/">Home</a>
+            <div class="">
+                {% if user.is_authenticated %} Welcome, {{user.username}} 
+                {%else%}
+                <a href="{% url 'login'%}">Login</a>
+                <a href="{%url 'signup'%}">Signup</a>
+                {%endif%}
+            </div>
     </nav>
     {%block content %}{%endblock%}
     

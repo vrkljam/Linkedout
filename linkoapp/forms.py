@@ -20,3 +20,8 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model=Comment
         fields = ('post','author','content',)
+
+class TestForm(forms.ModelForm):
+    class Meta:
+        model=Post
+        fields=('title','post_content')

@@ -1,5 +1,6 @@
 * {
-    background-color: green;
+    background-color: greenyellow;
+    background-image: url("https://th.bing.com/th/id/OIP.ZEx-Fz94YaBSmLJFwGoIkwHaEK?w=307&h=180&c=7&r=0&o=5&pid=1.7");
 }
 
 @keyframes move {
@@ -70,4 +71,9 @@
     font:bold;
     margin-top: 0;
     
+}
+
+.kristi-is-watching{
+    color: pink;
+    background-color: purple;
 }

@@ -2,10 +2,11 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from .models import Post, Comment, Profile
-from .forms import PostForm, CommentForm, ProfileForm
+from .forms import PostForm, CommentForm, ProfileForm,TestForm
 from django.views import View
 # from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.base import TemplateView
+from django.contrib.auth.decorators import login_required
 # Functional based methods 
 
 class Home(TemplateView):
@@ -30,7 +31,7 @@ def comment_detail(request,pk):
 
 # def profile_view(request):
 #     profile_form=ProfileForm()
-    
+@login_required 
 def post_create(request):
     if request.method=='POST':
         form = PostForm(request.POST)
@@ -41,6 +42,7 @@ def post_create(request):
         form = PostForm()
     return render(request, 'linkoapp/post_form.html', {'form':form})
 
+@login_required
 def comment_create(request):
     if request.method=='POST':
         form=CommentForm(request.POST)
@@ -51,6 +53,7 @@ def comment_create(request):
         form = CommentForm()
     return render(request, 'linkoapp/comment_form.html', {'form':form})
 
+@login_required
 def post_edit(request,pk):
     post=Post.objects.get(pk=pk)
     if request.method=='POST':
@@ -60,8 +63,21 @@ def post_edit(request,pk):
             return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm(instance=post)
-    return render(request, 'linkoapp/post_form.html', {'form':form})
+    return render(request, 'linkoapp/post_edit_form.html', {'form':form})
 
+@login_required
+def post_redit(request,pk):
+    post=Post.objects.get(pk=pk)
+    if request.method=='POST':
+        form = TestForm(request.POST, instance=post)
+        if form.is_valid():
+            post=form.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = TestForm(instance=post)
+    return render(request, 'linkoapp/post_redit_form.html', {'form':form})
+
+@login_required
 def comment_edit(request,pk):
     post=Comment.objects.get(pk=pk)
     if request.method=='POST':
@@ -73,10 +89,12 @@ def comment_edit(request,pk):
         form = CommentForm(instance=post)
     return render(request, 'linkoapp/comment_form.html', {'form':form})
 
+@login_required
 def post_delete(request,pk):
     Post.objects.get(id=pk).delete()
     return redirect('post_list')
 
+@login_required
 def comment_delete(request,pk):
     Comment.objects.get(id=pk).delete()
     return redirect('comment_list')

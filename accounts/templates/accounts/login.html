@@ -1,0 +1,19 @@
+{%extends 'linkoapp/base.html'%} 
+{%block content%} 
+{%if form.errors%}
+<p>Your username and password do not match. Please try again.</p>
+{%endif%}
+
+{%if next%}
+    <p>Please login to see this page</p>
+{%endif%}
+
+
+<form method="POST" action="{%url 'login'%}">
+    {%csrf_token%} {{form.as_p}}
+    <input type="submit" value='login' name="" id="">
+    <input type="hidden" name="next" value='{{next}}' id="">
+
+</form>
+
+{%endblock%}
