@@ -22,26 +22,14 @@ urlpatterns = [
     # path('posts/<int:pk>/redit', views.post_redit, name='post_redit'),
     
     path('posts/<int:pk>/delete', login_required(views.PostDelete.as_view()), name='post_delete'),
-    path('comments/<int:pk>/delete', views.comment_delete, name='comment_delete'),
+    path('comments/<int:pk>/delete', login_required(views.CommentDelete.as_view()),name='comment_delete'),
 
 ]
 
 # urlpatterns for class based views
 # urlpatterns = [
-
-#     path('posts/<int:pk>/', views.post_detail, name='post_detail'),
-#     path('comments/<int:pk>/', views.comment_detail, name='comment_detail'),
-
 # # class based urlpatterns below
-#     path('posts/',views.PostList.as_view(), name='post_list'),
-#     path('comments/', views.CommentList.as_view(), name='comment_list'),
-
-#     path('posts/new', views.PostCreate.as_view(), name='post_create'),
-#     path('comments/new', views.CommentCreate.as_view(), name='comment_create'),
-
-#     path('posts/<int:pk>/edit', views.PostEdit.as_view(), name='post_edit'),
-#     path('comments/<int:pk>/edit', views.CommentEdit.as_view(), name='comment_edit'),
-    
+   
 #     path('posts/<int:pk>/delete', views.PostDelete.as_view(), name='post_delete'),
 #     path('comments/<int:pk>/delete', views.CommentDelete.as_view(), name='comment_delete'),
 

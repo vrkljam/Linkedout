@@ -88,41 +88,11 @@ class CommentEdit(UpdateView):
 # ----Delete views----
 
 class PostDelete(DeleteView):
-    model: Post
-    template_name= 'linkoapp/post_delete_form.html'
+    model=Post
+    template_name='linkoapp/post_delete_form.html'
     success_url='/posts/'
 
-
-# @login_required
-# def post_delete(request,pk):
-#     Post.objects.get(id=pk).delete()
-#     return redirect('post_list')
-
-@login_required
-def comment_delete(request,pk):
-    Comment.objects.get(id=pk).delete()
-    return redirect('comment_list')
-
-
-
-# class based methods 
-
-# class ProfileList(ListView):
-#     template_name = 'post_list.html'
-
-#     def get_context_data(self, **kwargs):
-#         context=super().get_context_data(**kwargs)
-#         context['profile']=Profile.objects.all()
-#         return context
-
-# class PostDelete(DeleteView):
-#     model: Post
-#     template_name= 'linkoapp/post_delete_form.html'
-#     success_url='/'
-
-# class CommentDelete(DeleteView):
-#     model: Comment
-#     template_name= 'linkoapp/comment_delete_form.html'
-#     success_url='/comments/'
-
-
+class CommentDelete(DeleteView):
+    model=Comment
+    template_name='linkoapp/comment_delete_form.html'
+    success_url='/posts'
