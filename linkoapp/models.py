@@ -3,10 +3,8 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-
 class Profile(models.Model):
 
-    user_from_model=models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     is_retired=models.BooleanField(default=True)
     previous_companies=models.TextField()
     location=models.CharField(max_length=100)
@@ -14,10 +12,12 @@ class Profile(models.Model):
 
 
     def __str__(self):
-        return str(self.user_from_model)
+        return str(self.location)
+    # class Meta:
+    #     ordering =['location']
 
 class Post(models.Model):
-    username=models.ForeignKey(Profile, on_delete=models.CASCADE, default='User Name')
+    username=models.ForeignKey(User, on_delete=models.CASCADE, default='User Name')
     name_of_user=models.CharField(max_length=50)
     title=models.CharField(max_length=150)
     post_content=models.TextField()

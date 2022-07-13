@@ -2,18 +2,17 @@ from django.urls import path
 from . import views
 from django.contrib.auth.decorators import login_required
 
-
-# urlpatterns for function based views
 urlpatterns = [
     path('', views.Home.as_view(), name="home"),
 
     path('posts/',views.PostList.as_view(), name='post_list'),
+    path('profile/',views.ProfileList.as_view(), name='profile_page'),
+
     path('comments/', views.CommentList.as_view(), name='comment_list'),
 
     path('posts/<int:pk>/', views.PostDetail.as_view(), name='post_detail'),
     path('comments/<int:pk>/', views.CommentDetail.as_view(), name='comment_detail'),
-    # path('profile/', views.profile_view, name='profile_view'),
-
+    
     path('posts/new', login_required(views.PostCreate.as_view()), name='post_form'),
     path('comments/new', login_required(views.CommentCreate.as_view()), name='comment_form'),
 
@@ -25,12 +24,3 @@ urlpatterns = [
     path('comments/<int:pk>/delete', login_required(views.CommentDelete.as_view()),name='comment_delete'),
 
 ]
-
-# urlpatterns for class based views
-# urlpatterns = [
-# # class based urlpatterns below
-   
-#     path('posts/<int:pk>/delete', views.PostDelete.as_view(), name='post_delete'),
-#     path('comments/<int:pk>/delete', views.CommentDelete.as_view(), name='comment_delete'),
-
-# ]

@@ -10,25 +10,26 @@
     <link rel="stylesheet" href="{% static 'css/link.css' %}">
     <title>LinkO {%block title%}{%endblock%}</title>
 </head>
-<body class="text-black-400 ml-10">
+<body class="text-black-400 ml-10 mr-10">
     <h1 id="base-h1">Linked OUT!!</h1>
     <p class="text-green-500 flex justify-center m-5 text-lg">A site serving those who paid their dues, And now it's time to PLAY!</p>
  
     <nav class="container mx-auto">
         <div class="flex">
             <a href="/">Home</a>
+            <a href="/profile" class="ml-5">Profile page</a>
             <a href="/posts" class="ml-5">User Posts</a>
             <a href="/comments" class="ml-5">Comments</a>
             <a href="/posts/new" class="ml-5">New Post</a>
             <a href="/comments/new" class="ml-5">New Comment</a>
         </div>
         
-        <div class="flex justify-end">
+        <div class="flex justify-end mr-10">
             {% if user.is_authenticated %} Welcome, {{user.username}} 
-            <a href="{%url 'logout'%}" class="text-primary ml-4">Logout</a>
+                <a href="{%url 'logout'%}" class="text-primary ml-4">Logout</a>
             {%else%}
-            <a href="{% url 'login'%}" class="text-primary ml-2">Login</a>
-            <a class='ml-10' href="{%url 'signup'%}" class="text-primary ml-2">Signup</a>
+                <a href="{% url 'login'%}" class="text-primary ml-2">Login</a>
+                <a class='ml-10' href="{%url 'signup'%}" class="text-primary ml-2">Signup</a>
             {%endif%}
         </div>
     </nav>

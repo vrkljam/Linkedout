@@ -30,13 +30,15 @@ class CommentList(TemplateView):
         context['comments']=Comment.objects.all()
         return context
 
-# class ProfileList(TemplateView):
-#     template_name = 'linkoapp/post_list.html'
 
-#     def get_context_data(self, **kwargs):
-#         context=super().get_context_data(**kwargs)
-#         context['profile']=Profile.objects.all()
-#         return context
+
+class ProfileList(TemplateView):
+    template_name = 'linkoapp/profile_page.html'
+
+    def get_context_data(self, **kwargs):
+        context=super().get_context_data(**kwargs)
+        context['profile']=Profile.objects.all()
+        return context
 
 # --------View one item----------
 class PostDetail(DetailView):
@@ -46,6 +48,10 @@ class PostDetail(DetailView):
 class CommentDetail(DetailView):
     model=Comment
     template_name='linkoapp/comment_detail.html'
+
+class ProfielDetail(DetailView):
+    model=Profile
+    template_name='linkoapp/home.html'
 
 # ---Create views---------
 class PostCreate(CreateView):
@@ -96,3 +102,5 @@ class CommentDelete(DeleteView):
     model=Comment
     template_name='linkoapp/comment_delete_form.html'
     success_url='/posts'
+
+

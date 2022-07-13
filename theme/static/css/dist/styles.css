@@ -832,6 +832,10 @@ a {
   margin-left: 1rem;
 }
 
+.mr-10 {
+  margin-right: 2.5rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }

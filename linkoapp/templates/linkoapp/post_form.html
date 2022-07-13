@@ -3,7 +3,10 @@
 
 <h2>New Post!!</h2>
 <form method="POST">
-    {%csrf_token%} {{form.as_p}}
+    {%csrf_token%} 
+    {{form.as_p}}
+
+    {{form.user.username}}
     <button type="submit">Save</button>
 
 </form>
