@@ -2,22 +2,26 @@
 {%block title%}****POSTS!!!****{%endblock%}
 {%block content%}
 
-<h2>Posts:</h2>
+<h2 class="ml-16">Posts:</h2>
 <h3>{{profile.user_from_model}}</h3>
 <h3>hello--looking for profile info</h3>
 <h3>{{profile.is_retired}}</h3>
 
-<ul>
-    {%for post in posts%}
-    <li>
-        <a href="{%url 'post_detail' pk=post.pk%}"><h3>Name of user: {{post.name_of_user}}</h3></a>
-        <p>Post title: {{post.title}}</p>
-        <p>Post content: {{post.post_content}}</p>
-        <p>Name of user: {{post.username}}</p>
-      
-        <p>Date of post: {{post.post_date}}</p>
-    </li>
-    {%endfor%}
-</ul>
-
+<div class="w-fit ml-32" >
+    <ul >
+        {%for post in posts%}
+        <li class="border-2 border-indigo-500">
+            <a href="{%url 'post_detail' pk=post.pk%}"><h3>Name of user: {{post.username}}</h3></a>
+            <p>Post title: {{post.title}}</p>
+            <p>Post content: {{post.post_content}}</p>
+            <p>Name of user: {{post.username}}</p>
+            <p>location of user: {{post.location}}</p>
+        
+            <p class="">Date of post: {{post.post_date}}</p>
+        </li>
+        {%endfor%}
+    </ul>
+</div>
 {%endblock%}
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quos vero consequatur voluptates? Maiores asperiores praesentium velit consequuntur quibusdam expedita repellendus beatae, deserunt perspiciatis quas libero quaerat voluptatem reprehenderit laboriosam facilis a voluptatibus quam nulla quos. Iure voluptatem quos quia ullam officiis nostrum autem explicabo quidem! Deleniti unde repellendus recusandae!</p>

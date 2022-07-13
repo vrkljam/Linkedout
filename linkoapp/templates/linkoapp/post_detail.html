@@ -2,7 +2,7 @@
 {%block content%}
 
 <h3>Post-Details:</h3>
-<a href="{% url 'post_redit' pk=post.pk%}"><h4>Edit this Post</h4></a>
+<a href="{% url 'post_edit' pk=post.pk%}"><h4>Edit this Post</h4></a>
 
 <a href="{% url 'post_delete' pk=post.pk%}"><h4>Delete this Post</h4></a>
 
@@ -17,13 +17,18 @@
 
 
     <h3>Comments: <a href="{%url 'comment_list'%}">Add to comment (+)</a></h3>
+    
 
     <ul>
         {% for comment in post.comments.all %}
         <li>
             <a href="{%url 'comment_detail' pk=comment.pk%}">{{comment.author}}</a>
+            <p>{{comment.content}}</p>
         </li>
         {%endfor%}
+
+
+
         <h2>end for is here</h2>
     </ul>
 </div>

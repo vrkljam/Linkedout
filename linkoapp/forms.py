@@ -24,4 +24,4 @@ class CommentForm(forms.ModelForm):
 class TestForm(forms.ModelForm):
     class Meta:
         model=Post
-        fields=('title','post_content')
+        fields=('title','post_content', 'username',)

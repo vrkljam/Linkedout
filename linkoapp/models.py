@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
 
-    user_from_model=models.ForeignKey(User, on_delete=models.CASCADE, related_name='profile')
+    user_from_model=models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     is_retired=models.BooleanField(default=True)
     previous_companies=models.TextField()
     location=models.CharField(max_length=100)

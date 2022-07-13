@@ -1,33 +1,51 @@
+{% load tailwind_tags%}
 {% load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% tailwind_css %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="{% static 'css/link.css'%}"> -->
     <link rel="stylesheet" href="{% static 'css/link.css' %}">
     <title>LinkO {%block title%}{%endblock%}</title>
 </head>
-<body>
+<body class="text-black-400 ml-10">
     <h1 id="base-h1">Linked OUT!!</h1>
-    <p>A site serving those who paid their dues, And now it's time to PLAY!</p>
+    <p class="text-green-500 flex justify-center m-5 text-lg">A site serving those who paid their dues, And now it's time to PLAY!</p>
  
-    <nav>
-        <a href="/posts">User Posts</a>
-        <a href="/comments">Comments</a>
-        <a href="/posts/new">New Post</a>
-        <a href="/comments/new">New Comment</a>
-        <a href="/">Home</a>
-            <div class="">
-                {% if user.is_authenticated %} Welcome, {{user.username}} 
-                {%else%}
-                <a href="{% url 'login'%}">Login</a>
-                <a href="{%url 'signup'%}">Signup</a>
-                {%endif%}
-            </div>
+    <nav class="container mx-auto">
+        <div class="flex">
+            <a href="/">Home</a>
+            <a href="/posts" class="ml-5">User Posts</a>
+            <a href="/comments" class="ml-5">Comments</a>
+            <a href="/posts/new" class="ml-5">New Post</a>
+            <a href="/comments/new" class="ml-5">New Comment</a>
+        </div>
+        
+        <div class="flex justify-end">
+            {% if user.is_authenticated %} Welcome, {{user.username}} 
+            <a href="{%url 'logout'%}" class="text-primary ml-4">Logout</a>
+            {%else%}
+            <a href="{% url 'login'%}" class="text-primary ml-2">Login</a>
+            <a class='ml-10' href="{%url 'signup'%}" class="text-primary ml-2">Signup</a>
+            {%endif%}
+        </div>
     </nav>
     {%block content %}{%endblock%}
     
 </body>
 </html>
+
+<!-- <div class="grid grid-cols-2 gap-y-4 gap-x-8">
+    <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Home </a>
+
+    <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> User Posts </a>
+
+    <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Comments </a>
+
+    <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> New Post </a>
+
+    <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> New Comment </a>
+
+</div> -->

@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'linkoapp',
     'accounts',
+    'tailwind',
+    'theme',
+    'django_browser_reload',
 
 ]
 
@@ -53,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_browser_reload.middleware.BrowserReloadMiddleware',
 ]
 
 ROOT_URLCONF = 'linkedout.urls'
@@ -131,3 +135,8 @@ STATICFILES_DIRS =[os.path.join(BASE_DIR, 'linkoapp/static')]
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+TAILWIND_APP_NAME='theme'
+INTERNAL_IPS =[
+    '127.0.0.1'
+]

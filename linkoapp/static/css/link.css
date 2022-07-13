@@ -1,6 +1,8 @@
+
+
 * {
-    background-color: greenyellow;
-    background-image: url("https://th.bing.com/th/id/OIP.ZEx-Fz94YaBSmLJFwGoIkwHaEK?w=307&h=180&c=7&r=0&o=5&pid=1.7");
+    background-color:lightblue;
+   
 }
 
 @keyframes move {
@@ -24,6 +26,7 @@
     
 }
 
+
 #base-h1{
     text-align: center;
     color:orange;
@@ -33,47 +36,53 @@
     animation-direction: alternate;
     animation-timing-function: ease-in;
    }
-   
-#home-big-container{
-    height: 100px;
-    width: 100px;
-    display: flex;
-    flex-direction: column;
-    border: 3px solid black;
-    color: pink;
-    background-color: gold;
+#loginOut{
+    /* float:
+    background-color:
+    color: */
 }
-.ref{
-    color: pink;
+#homeContainer{
+    /* height: 100px;
+    width: 200px; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* border: 3px solid black;
+    background-color: gold; */
 }
+
 .new{
-    background-color: aqua;
+    /* background-color: aqua;
     border: 5px solid red;
     display: flex;
     flex-direction: column;
+    color:green; */
 }
 .new2{
-    border: 5px solid black;
+    /* border: 5px solid black;
     height: 50px;
     width: 50px;
-    background-color: blue;
+    background-color: blue; */
 }
 
 .post-details-page{
-    border: 5px solid red;
+    /* border: 5px solid red;
     width: 300px;
-    margin-left:50px;
+    margin-left:50px; */
 
 }
 
 .post-title{
-    text-align: center;
+    /* text-align: center;
     font:bold;
-    margin-top: 0;
+    margin-top: 0; */
     
 }
 
-.kristi-is-watching{
-    color: pink;
-    background-color: purple;
+.redit-form{
+    /* color: black;
+    background-color: blueviolet; */
 }
+
+#baseTwo{
+    /* color: green; */
+   }

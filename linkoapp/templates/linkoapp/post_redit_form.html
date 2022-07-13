@@ -3,15 +3,16 @@
 {%load static%}
 {%block content%}
 
-<h2>Edit this post: {{post.title}}</h2>
+<h2>Edit this post: {{form.title}}</h2>
+<h3>From: {{form.username}}</h3>
 <form method="POST">
     {%csrf_token%} 
 
 
-    <h1 class="kristi-is-watching">this is 'form.title': {{form.title}}</h1>
+    <h1 class="redit-form">this is 'form.title': {{form.title}}</h1>
     <h3>this is 'form.post_content': {{form.post_content}}</h3>
     
-    <button type="submit">Save</button>
+    <button class="rounded-full" type="submit">Save</button>
 
 </form>
 
