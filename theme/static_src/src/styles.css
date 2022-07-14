@@ -2,8 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    a {
-        color:red;
-    }
-}
+
+/* class='underline text-blue-600 hover:text-blue-800 visted:text-purple-600' */

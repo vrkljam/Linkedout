@@ -1,0 +1,11 @@
+{%extends 'linkoapp/base.html'%} 
+{% block content %} 
+<h1>Are you sure you want to delete {{portarit.user}}?</h1>
+<form method="POST">
+    {% csrf_token %}
+    <button class='text-white bg-blue-600 hover:bg-blue-700 font-bold py-6 px-4 rounded' type="submit">Click here to delete</button>
+    <a class='flex underline text-blue-600 hover:text-blue-800 visted:text-purple-600' href="{% url 'portrait_detail' pk=portrait.pk %}">return back</a>
+
+</form>
+
+{%endblock%}

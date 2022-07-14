@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from .models import Post, Comment, Profile
-from .forms import PostForm, CommentForm, ProfileForm,TestForm
+from .models import Post, Comment, Portrait
+from .forms import PostForm, CommentForm,TestForm, PortraitForm
 from django.views import View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.base import TemplateView
@@ -30,15 +30,15 @@ class CommentList(TemplateView):
         context['comments']=Comment.objects.all()
         return context
 
-
-
-class ProfileList(TemplateView):
-    template_name = 'linkoapp/profile_page.html'
+class PortraitList(TemplateView):
+    template_name = 'linkoapp/portrait_page.html'
 
     def get_context_data(self, **kwargs):
         context=super().get_context_data(**kwargs)
-        context['profile']=Profile.objects.all()
+        context['portraits']=Portrait.objects.all()
         return context
+
+    
 
 # --------View one item----------
 class PostDetail(DetailView):
@@ -49,9 +49,9 @@ class CommentDetail(DetailView):
     model=Comment
     template_name='linkoapp/comment_detail.html'
 
-class ProfielDetail(DetailView):
-    model=Profile
-    template_name='linkoapp/home.html'
+class PortraitDetail(DetailView):
+    model=Portrait
+    template_name='linkoapp/portrait_detail.html'
 
 # ---Create views---------
 class PostCreate(CreateView):
@@ -65,6 +65,12 @@ class CommentCreate(CreateView):
     fields=['post','author','content',]
     template_name= 'linkoapp/comment_form.html'
     success_url='/comments/'
+
+class PortraitCreate(CreateView):
+    model= Portrait
+    fields=['location','first_name','last_name','email','photo_url',]
+    template_name= 'linkoapp/portrait_form.html'
+    success_url='/'
 
 # ------Update Views--------
 class PostEdit(UpdateView):
@@ -91,6 +97,12 @@ class CommentEdit(UpdateView):
     template_name= 'linkoapp/comment_edit_form.html'
     success_url='/comments/'
 
+class PortraitEdit(UpdateView):
+    model= Portrait
+    fields=['location','first_name','last_name','email','photo_url','previous_companies']
+    template_name= 'linkoapp/portrait_edit_form.html'
+    success_url='/profile/'
+
 # ----Delete views----
 
 class PostDelete(DeleteView):
@@ -102,5 +114,10 @@ class CommentDelete(DeleteView):
     model=Comment
     template_name='linkoapp/comment_delete_form.html'
     success_url='/posts'
+
+class PortraitDelete(DeleteView):
+    model=Portrait
+    template_name='linkoapp/portrait_delete_form.html'
+    success_url='/home'
 
 

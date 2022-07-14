@@ -1,9 +1,10 @@
 {%extends 'linkoapp/base.html'%}
 {%block content%}
 <form method='POST' action="{%url 'signup' %}">
-    {%csrf_token%} {{form.as_p}}
-
-    <input type="submit" value="Sign Up" name="" id="">
+    {%csrf_token%} 
+    {{form.as_p}}
+    {{portrait_form.as_p}}
+    <input class='text-white bg-blue-600 hover:bg-blue-700 font-bold py-6 px-4 rounded' type="submit" value="Sign Up" name="" id="">
     <input type="hidden" name="next" value='{{next}}' id="">
 </form>
 {%endblock%}

@@ -1,0 +1,22 @@
+{% extends 'linkoapp/base.html'%}
+{%block content%}
+
+<h3 class="align-center">portrait-Details:</h3>
+
+    <div class="flex justify-center">
+        <a class='underline text-blue-600 hover:text-blue-800 visted:text-purple-600' href="{% url 'portrait_edit' pk=portrait.pk%}"><h4>Edit this Profile</h4></a>
+        <a class="underline text-blue-600 hover:text-blue-800 visted:text-purple-600 ml-5" href="{% url 'portrait_delete' pk=portrait.pk%}"><h4>Delete this Profile</h4></a>
+    </div>
+
+    <div class="flex items-center justify-center ">
+        <div class="box-border h-50 w-50 border-2 text-center">
+            <h3 class="post-title">Profile of: {{portrait.user}}</h3>
+            <p class="text-red-700 text-base">First Name: {{portrait.first_name}}</p>
+            <p class="text-orange-700 text-base">Last Name: {{portrait.last_name}}</p>
+            <p class="text-brown-300 text-base">Email: {{portrait.email}}</p>
+            <p class="text-brown-300 text-base">Location: {{portrait.location}}</p>
+        </div>
+    </div>
+
+</div>
+{%endblock%}

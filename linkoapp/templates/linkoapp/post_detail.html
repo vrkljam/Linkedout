@@ -1,35 +1,45 @@
 {% extends 'linkoapp/base.html'%}
 {%block content%}
 
-<h3>Post-Details:</h3>
-<a href="{% url 'post_edit' pk=post.pk%}"><h4>Edit this Post</h4></a>
+<h3 class="align-center">Post-Details:</h3>
 
-<a href="{% url 'post_delete' pk=post.pk%}"><h4>Delete this Post</h4></a>
+    <div class="flex justify-center">
+        <a class='underline text-blue-600 hover:text-blue-800 visted:text-purple-600' href="{% url 'post_edit' pk=post.pk%}"><h4>Edit this Post</h4></a>
+        <a class="underline text-blue-600 hover:text-blue-800 visted:text-purple-600 ml-5" href="{% url 'post_delete' pk=post.pk%}"><h4>Delete this Post</h4></a>
+    </div>
 
-<div class="post-details-page">
-    <h3 class="post-title">{{post.title}}</h3>
-    <p>Date of Post: {{post.post_date}}</p>
-    <p>username: {{post.username}}</p>
+<div class="flex items-center justify-center ">
+    <!-- <div class="box-border h-50 w-50 border-2 text-center"> -->
+    <div class="max-w-sm rounded overflow-hidden shadow-xl">
+        <h3 class="post-title">Post Title: {{post.title}}</h3>
+        <p>Date of Post: {{post.post_date}}</p>
+        <p>username: {{post.username}}</p>
 
-    <p>Name of Poster: {{post.name_of_user}}</p>
-    <p>Content of Post: {{post.post_content}}</p>
+        <p>Name of Poster: {{post.name_of_user}}</p>
+        <p>Content of Post: {{post.post_content}}</p>
+    </div>
+</div>
+
+<!-- <div class="flex-col align-center items-center justify-center "> -->
+<div class="max-w-sm rounded overflow-hidden shadow-lg">
+    <p class="text-bold text-orange-500">Comments: </h3>
+    <div lass="box-border h-50 w-50 border-2 text-center">
+        <ul >
+            {% for comment in post.tacos.all %}
+            <li>
+                <a href="{%url 'comment_detail' pk=comment.pk%}">{{comment.author}}</a>
+                <p>what they said: {{comment.content}}</p>
+                <p>Date: {{comment.created_date}}</p>
+            </li>
+            {%endfor%} 
+        </ul>
+    </div>
+    <div>
+        <a class="underline text-blue-600 hover:text-blue-800 visted:text-purple-600 ml-5" href="{%url 'comment_form'%}">Add to comment (+)</a>
+    </div>
 
 
 
-    <h3>Comments: <a href="{%url 'comment_list'%}">Add to comment (+)</a></h3>
-    
-
-    <ul>
-        {% for comment in post.comments.all %}
-        <li>
-            <a href="{%url 'comment_detail' pk=comment.pk%}">{{comment.author}}</a>
-            <p>{{comment.content}}</p>
-        </li>
-        {%endfor%}
-
-
-
-        <h2>end for is here</h2>
-    </ul>
+     
 </div>
 {%endblock%}
