@@ -6,11 +6,11 @@
 <div >
     <ul >
         {%for portrait in portraits %}
-    <li >
+    <li class="max-w-sm rounded overflow-hidden shadow-lg mt-10">
         
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-            <div class="font-bold text-xl mb-2">Profile of: <img class="w-full" src="{{portrait.photo_url}}" alt="photo"></div>
-            <a class='flex underline text-blue-600 hover:text-blue-800 visted:text-purple-600' href="{%url 'portrait_detail' pk=portrait.pk%}"><h3>Username: {{portrait.user}}</h3></a>
+        <div >
+            <div class="font-bold text-xl mb-2">Profile of: <a class='flex underline text-blue-600 hover:text-blue-800 visted:text-purple-600' href="{%url 'portrait_detail' pk=portrait.pk%}"><h3>Username: {{portrait.user}}</h3></a></div>
+            <img class="w-full" src="{{portrait.photo_url}}" alt="photo">
             <p class="text-red-700 text-base">First Name: {{portrait.first_name}}</p>
             <p class="text-orange-700 text-base">Last Name: {{portrait.last_name}}</p>
             <p class="text-brown-700 text-base">Email: {{portrait.email}}</p>

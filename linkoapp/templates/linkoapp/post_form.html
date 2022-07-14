@@ -1,19 +1,20 @@
 {% extends 'linkoapp/base.html'%}
 {%block content%}
 
-<h2>New Post!!</h2>
-<form method="POST">
-    {%csrf_token%} 
-    <!-- {{form.as_p}} -->
-    <!-- <h1>username!!! {{form.username}}</h1> -->
-    <!-- <h2 class="text-purple-500">name of user{{form.name_of_user}}</h2> -->
-    <h2 class="text-purple-500">Logged in as: {{user.username}}</h2>
-    <h3>Post Title {{form.title}}</h3>
-    <h4>Post Content {{form.post_content}}</h4>
-        
+<div class ='flex inline-flex ml-40'>
+    <p>New Post!!</p>
+   
+    <form method="POST">
+        {%csrf_token%} 
+    
+        <!-- <h2 class="text-purple-500">name of user{{form.name_of_user}}</h2> -->
+        <h2 class="text-purple-500">Logged in as: {{user.username}}</h2>
+        <h3>Post Title {{form.title}}</h3>
+        <h4>Post Content {{form.post_content}}</h4>
+            
 
-    <button class='text-white bg-blue-600 hover:bg-blue-700 font-bold py-6 px-4 rounded' type="submit">Save</button>
+        <button class='text-white bg-blue-600 hover:bg-blue-700 font-bold py-6 px-4 rounded' type="submit">Save</button>
 
-</form>
-
+    </form>
+</div>
 {%endblock%}
