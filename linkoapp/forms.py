@@ -11,7 +11,7 @@ class PostForm(forms.ModelForm):
         
 class PortraitForm(forms.ModelForm):
         model =Portrait
-        fields=('user','location','first_name', 'last_name','previous_companies','photo_url')
+        fields=('user','first_name', 'last_name','previous_companies','photo_url','location',)
        
         
 class CommentForm(forms.ModelForm):

@@ -5,13 +5,13 @@
             <ul  class="grid grid-cols-3 ml-5">
             {%for portrait in portraits %}
                 <li class="flex justify-center max-w-sm rounded overflow-hidden shadow-lg mt-10 ml-5" >
-                            <div class="font-bold text-xl text-red-400 mb-2  ">Profile of: 
+                            <div class="font-bold text-xl mb-2  ">Profile of: 
                             <a class='flex underline text-blue-600 hover:text-blue-800 visted:text-purple-600' 
                             href="{%url 'portrait_detail' pk=portrait.pk%}"><p>Username: {{portrait.user}}</p></a>
                             <img class="w-40 h-auto rounded-full" src="{{portrait.photo_url}}" alt="photo">
                             <p class="text-base">First Name: {{portrait.first_name}}</p>
-                            <p class="text-orange-700 text-base">Last Name: {{portrait.last_name}}</p>
-                            <p class="text-brown-700 text-base">Email: {{portrait.email}}</p>
+                            <p class="text-base">Last Name: {{portrait.last_name}}</p>
+                            <p class="text-base">Email: {{portrait.email}}</p>
                         </div>
                     </li>
             {%endfor%}

@@ -1,17 +1,9 @@
-<!-- <h1>{{title}}</h1>
-{{#if complete}}
-<p>Status: complete</p>
-{{else}}
-<p>Status: incomplete</p>
-{{/if}}
-<a href="/todos" class="btn btn-secondary">&larr; Back</a> -->
-
 {% extends 'linkoapp/base.html'%}
 {%block content%}
 <div class="w-fit ml-32 flex inline-flex flex-col">
         <div class="flex justify-center">
-            <a class='underline text-blue-600 hover:text-blue-800 visted:text-purple-600' href="{% url 'bucketlist_edit' pk=post.pk%}"><h4>Edit this Bucket list item</h4></a>
-            <a class="underline text-blue-600 hover:text-blue-800 visted:text-purple-600 ml-5" href="{% url 'bucketlist_delete' pk=post.pk%}"><h4>Delete this item</h4></a>
+            <a class='underline text-blue-600 hover:text-blue-800 visted:text-purple-600' href="{% url 'bucket_edit' pk=post.pk%}"><h4>Edit this Bucket list item</h4></a>
+            <a class="underline text-blue-600 hover:text-blue-800 visted:text-purple-600 ml-5" href="{% url 'bucket_delete' pk=post.pk%}"><h4>Delete this item</h4></a>
         </div>
 
         <div class="flex items-center justify-center mt-5">

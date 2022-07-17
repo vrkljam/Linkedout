@@ -19,7 +19,7 @@
             <p class="inline">Completed: {{bucket.complete}}</p>
           </li>
           {%else%}
-          <a class='flex underline text-blue-600 hover:text-blue-800 visted:text-purple-600 text-center' href="{%url 'bucket_detail' pk=bucket.pk%}"></a>
+          <a class='flex underline text-blue-600 hover:text-blue-800 visted:text-purple-600 text-center' href="{%url 'bucket_detail' pk=bucket.pk%}">Click here to edit</a>
           <li class="max-w-sm rounded overflow-hidden shadow-xl text-center ml-30 mt-5">
               Date of Item: {{bucket.created_date}} --Title: {{bucket.title}} --Completed: {{bucket.complete}}
             </li>   

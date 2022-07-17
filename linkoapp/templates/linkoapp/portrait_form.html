@@ -1,18 +1,17 @@
 {% extends 'linkoapp/base.html'%}
 {%block content%}
 
-
 <div class="w-fit ml-32 flex inline-flex">
         <div>
             <p class="text-center">New Profile</p>
             <form class="w-full max-w-lg rounded shadow-xl text-center ml-30 mt-5" method="POST">
                 {%csrf_token%} 
-                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <div class="w-full md:w-1/2 px-3 mb-6">
                     <p>First Name:{{form.first_name}}</p>
                     <p>Work history: {{form.previous_companies}}</p>
                     <p>Last Name:{{form.last_name}}</p>
                     <p>Location: {{form.location}}</p>
-                    <p class="text-purple-500">Email:{{form.email}}</p>
+                    <p>Email:{{form.email}}</p>
                     <p>Photo: {{form.photo_url}}</p>
                 </div>
             <button class='text-white bg-blue-600 hover:bg-blue-700 font-bold py-6 px-4 rounded' type="submit">Save</button>

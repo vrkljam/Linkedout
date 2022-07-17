@@ -2,14 +2,16 @@
 {%block content%}
 
 <div class="w-fit ml-32 flex inline-flex">
-    <h2>Edit this porfile: {{portrait.first_name}} {{portarit.last_name}}</h2>
-    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-        <form class="w-full max-w-lg" method="POST">
-            {%csrf_token%} 
-            {{form.as_p}}
-            <button class='text-white bg-blue-600 hover:bg-blue-700 font-bold py-6 px-4 rounded' type="submit">Save</button>
+    <div>
+        <p>Edit this profile: {{portrait.first_name}} {{portarit.last_name}}</p>
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <form class="w-full max-w-lg" method="POST">
+                {%csrf_token%} 
+                {{form.as_p}}
+                <button class='text-white bg-blue-600 hover:bg-blue-700 font-bold py-6 px-4 rounded' type="submit">Save</button>
 
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 {%endblock%}

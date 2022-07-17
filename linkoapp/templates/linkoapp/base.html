@@ -4,16 +4,18 @@
 <html lang="en">
 <head>
     {% tailwind_css %}
+    <link rel="stylesheet" href="{% static 'css/link.css' %}">
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/link.css' %}">
-    <title>LinkO {%block title%}{%endblock%}</title>
+ 
+    <title>LinkedOut {%block title%}{%endblock%}</title>
 </head>
 
 
 <body class="text-black-400 ml-10 mr-10">
-    <h1 id="base-h1">Linked OUT!!</h1>
+    <h1 class="text-center mt-10">Linked OUT!!</h1>
     <p class="text-black-500 flex justify-center m-5 text-lg">A site serving those who paid their dues, And now it's time to PLAY!</p>
  
     <nav class="relative 
@@ -32,7 +34,7 @@
             <a href="/profile" class="ml-5">Profiles</a>
             <a href="/portraits/new" class="ml-5">New Profile</a>
             <a href="/buckets/" class="ml-5">Bucket</a>
-            <a href="/buckets/new" class="ml-5"> new Bucket</a>
+            <a href="/buckets/new" class="ml-5"> New Bucket</a>
                         
         </div>
         
@@ -58,24 +60,7 @@
         </div>
     </div>
 
-
-
-
-
     {%block content %}{%endblock%}
     
 </body>
 </html>
-
-<!-- <div class="grid grid-cols-2 gap-y-4 gap-x-8">
-    <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Home </a>
-
-    <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> User Posts </a>
-
-    <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> Comments </a>
-
-    <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> New Post </a>
-
-    <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700"> New Comment </a>
-
-</div> -->
