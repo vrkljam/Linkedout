@@ -1,27 +1,26 @@
+from dataclasses import fields
 from django import forms
-from .models import Post, Comment, Portrait
+from .models import BucketList, Post, Comment, Portrait, BucketList
+
 
 class PostForm(forms.ModelForm):
     class Meta:
         model =Post
         fields=('username','title','post_content')
-
+        
+        
 class PortraitForm(forms.ModelForm):
         model =Portrait
-        fields=('location')
-        # user_from_model=forms.CharField(max_length=50)
-        # is_retired=forms.BooleanField()
-        # previous_companies=forms.Textarea()
-        # location=forms.CharField(max_length=100)
-        # photo_url=forms.Textarea()
-        
+        fields=('user','location','first_name', 'last_name','previous_companies','photo_url')
+       
         
 class CommentForm(forms.ModelForm):
     class Meta:
         model=Comment
         fields = ('post','author','content',)
 
-class TestForm(forms.ModelForm):
+class BucketForm(forms.ModelForm):
     class Meta:
-        model=Post
-        fields=('title','post_content', 'username',)
+        model=BucketList
+        fields=('title', 'complete')
+

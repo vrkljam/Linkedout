@@ -4,3 +4,35 @@
 
 
 /* class='underline text-blue-600 hover:text-blue-800 visted:text-purple-600' */
+@layer utilities{
+@keyframes bkgd {
+    0% {background-color: lightblue;}
+    50% {background-color: #6dc694;}
+    100% {background-color: #b9a2e8;}
+    }
+
+body { 
+    
+    animation: bkgd;
+    animation-duration: 6s; 
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+
+#save-btn{
+    border: 3px solid black;
+    color:green;
+    border-radius: 5%;
+}
+
+button{
+    background-color: blue;  
+    font-size: bold;
+    padding: 24px, 32px;
+}
+button:hover{
+    background-color: blue;
+}
+}

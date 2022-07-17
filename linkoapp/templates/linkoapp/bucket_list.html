@@ -1,0 +1,29 @@
+{% extends 'linkoapp/base.html'%}
+{%block title%}****Bucket List!****{%endblock%}
+{%block content%}
+
+<!-- <div class="flex text-center inline-flex ml-40">
+     <div class="w-fit ml-32 flex inline-flex" > -->
+<div>
+  <h1>Bucket List</h1>
+  <a href="/buckets/new" class="btn btn-primary">New List Item</a>
+  
+    <ul  >
+      {%for bucket in buckets%}
+        {% if bucket.complete%}
+      
+        <li class="max-w-sm rounded overflow-hidden shadow-xl text-center ml-30 mt-5">
+          Date of Item: {{bucket.created_date}} --Title: {{bucket.title}} --Completed: {{bucket.complete}}
+        </li>
+        {%else%}
+        <a class='flex underline text-blue-600 hover:text-blue-800 visted:text-purple-600 text-center' href="{%url 'bucket_detail' pk=bucket.pk%}"></a><li class="max-w-sm rounded overflow-hidden shadow-xl text-center ml-30 mt-5">
+            Date of Item: {{bucket.created_date}} --Title: {{bucket.title}} --Completed: {{bucket.complete}}
+          </li>   
+      </li>
+        {%endif%}
+      {%endfor%}
+      </ul>
+    
+  </div>
+
+{%endblock%}

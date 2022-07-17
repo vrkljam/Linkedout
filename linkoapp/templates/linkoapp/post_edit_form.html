@@ -1,11 +1,14 @@
 {% extends 'linkoapp/base.html'%}
 {%block content%}
 
-<h2>Edit this post: {{post.title}}</h2>
-<form method="POST">
-    {%csrf_token%} {{form.as_p}}
-    <button type="submit">Save</button>
 
-</form>
-
+<div class="w-full ml-32 flex inline-flex md:w-1/2 px-3 mb-6">
+    
+    <form class="rounded shadow-xl text-center ml-30 mt-5" method="POST">
+            <p class="'text-center">Edit this post: {{post.title}}</p>
+            {%csrf_token%} 
+            {{form.as_p}}
+            <button class="text-white bg-red-600 hover:bg-blue-700 font-bold py-6 px-4 rounded" type="submit">Save</button>
+        </form>
+</div>
 {%endblock%}

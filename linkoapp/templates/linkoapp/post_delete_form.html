@@ -1,11 +1,18 @@
 {%extends 'linkoapp/base.html'%} 
 {% block content %} 
-<h1>Are you sure you want to delete {{post.title}}?</h1>
-<form method="POST">
-    {% csrf_token %}
-    <button type="submit">Click here to delete</button>
-    <a href="{% url 'post_detail' pk=post.pk %}">return back</a>
 
-</form>
+
+
+<div class="w-full ml-32 flex inline-flex md:w-1/2 px-3 mb-6 md:mb-0">
+    <p>Are you sure you want to delete?  {{post.title}}</p>
+   
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Click here to delete</button>
+        <a class="text-white bg-red-600 hover:bg-blue-700 font-bold py-6 px-4 rounded" href="{% url 'post_detail' pk=post.pk %}">Click here to cancel</a>
+
+    </form>
+</div>
+
 
 {%endblock%}

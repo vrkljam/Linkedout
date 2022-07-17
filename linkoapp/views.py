@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from .models import Post, Comment, Portrait
-from .forms import PostForm, CommentForm,TestForm, PortraitForm
+from .models import Post, Comment, Portrait, BucketList
+from .forms import PostForm, CommentForm, PortraitForm
 from django.views import View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.base import TemplateView
@@ -30,6 +30,13 @@ class CommentList(TemplateView):
         context['comments']=Comment.objects.all()
         return context
 
+class BucketList(TemplateView):
+    template_name='linkoapp/bucket_list.html'
+
+    def get_context_data(self, **kwargs):
+        context= super().get_context_data(**kwargs)
+        context['buckets']=BucketList.objects.all()
+
 class PortraitList(TemplateView):
     template_name = 'linkoapp/portrait_page.html'
 
@@ -53,12 +60,20 @@ class PortraitDetail(DetailView):
     model=Portrait
     template_name='linkoapp/portrait_detail.html'
 
+class BuckListDetail(DetailView):
+    model=BucketList
+    template_name= 'linkoapp/bucket_detail.html'
+
 # ---Create views---------
+
 class PostCreate(CreateView):
     model= Post
     fields=['username','title','post_content']
     template_name= 'linkoapp/post_form.html'
     success_url='/'
+   
+
+    # <input type="hidden" name="username" value="{{'form.username':user.username%}}">
 
 class CommentCreate(CreateView):
     model= Comment
@@ -68,14 +83,20 @@ class CommentCreate(CreateView):
 
 class PortraitCreate(CreateView):
     model= Portrait
-    fields=['location','first_name','last_name','email','photo_url',]
+    fields=['location','first_name','last_name','email','photo_url','previous_companies']
     template_name= 'linkoapp/portrait_form.html'
+    success_url='/'
+
+class BucketListCreate(CreateView):
+    model=BucketList
+    fields=['title','complete']
+    template_name='linkoapp/bucket_form.html'
     success_url='/'
 
 # ------Update Views--------
 class PostEdit(UpdateView):
     model= Post
-    fields=['name_of_user','title','post_content']
+    fields=['username','title','post_content']
     template_name= 'linkoapp/post_edit_form.html'
     success_url='/'
 
@@ -103,21 +124,32 @@ class PortraitEdit(UpdateView):
     template_name= 'linkoapp/portrait_edit_form.html'
     success_url='/profile/'
 
+class BucketListEdit(UpdateView):
+    model=BucketList
+    fields=['name_of_user','title','post_content']
+    template_name= 'linkoapp/post_edit_form.html'
+    success_url='/'
+
 # ----Delete views----
 
 class PostDelete(DeleteView):
     model=Post
     template_name='linkoapp/post_delete_form.html'
-    success_url='/posts/'
+    success_url='/'
 
 class CommentDelete(DeleteView):
     model=Comment
     template_name='linkoapp/comment_delete_form.html'
-    success_url='/posts'
+    success_url='/'
 
 class PortraitDelete(DeleteView):
     model=Portrait
     template_name='linkoapp/portrait_delete_form.html'
-    success_url='/home'
+    success_url='/'
+
+class BucketDelete(DeleteView):
+    model=BucketList
+    template_name='linkoapp/bucket_delete_form.html'
+    success_url='/'
 
 

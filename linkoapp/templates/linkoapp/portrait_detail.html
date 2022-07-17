@@ -1,22 +1,25 @@
 {% extends 'linkoapp/base.html'%}
 {%block content%}
-
-<h3 class="align-center">portrait-Details:</h3>
-
-    <div class="flex justify-center">
-        <a class='underline text-blue-600 hover:text-blue-800 visted:text-purple-600' href="{% url 'portrait_edit' pk=portrait.pk%}"><h4>Edit this Profile</h4></a>
-        <a class="underline text-blue-600 hover:text-blue-800 visted:text-purple-600 ml-5" href="{% url 'portrait_delete' pk=portrait.pk%}"><h4>Delete this Profile</h4></a>
-    </div>
-
-    <div class="flex items-center justify-center ">
-        <div class="box-border h-50 w-50 border-2 text-center">
-            <h3 class="post-title">Profile of: {{portrait.user}}</h3>
-            <p class="text-red-700 text-base">First Name: {{portrait.first_name}}</p>
-            <p class="text-orange-700 text-base">Last Name: {{portrait.last_name}}</p>
-            <p class="text-brown-300 text-base">Email: {{portrait.email}}</p>
-            <p class="text-brown-300 text-base">Location: {{portrait.location}}</p>
+<div class="w-fit ml-40 flex inline-flex">
+        <div class="ml-40">
+        
+            <div class="flex justify-center">
+                <a class='underline text-blue-600 hover:text-blue-800 visted:text-purple-600' href="{% url 'portrait_edit' pk=portrait.pk%}"><h4>Edit this Profile</h4></a>
+                <a class="underline text-blue-600 hover:text-blue-800 visted:text-purple-600 ml-5" href="{% url 'portrait_delete' pk=portrait.pk%}"><h4>Delete this Profile</h4></a>
+            </div>
+            
+            <p class="text-center">Profile Details:</p>
+            <div class="flex items-center justify-center rounded shadow-xl text-center ml-30 mt-5 ">
+                <div class="box-border h-50 w-50 border-2 text-center">
+                    <p class="post-title">Profile of: {{portrait.user}}</p>
+                    <img class="w-40 h-auto rounded-lg" src="{{portrait.photo_url}}" alt="photo">
+                    <p class="text-red-700 text-base">First Name: {{portrait.first_name}}</p>
+                    <p class="text-orange-700 text-base">Last Name: {{portrait.last_name}}</p>
+                    <p class="text-brown-300 text-base">Email: {{portrait.email}}</p>
+                    <p class="text-brown-300 text-base">Location: {{portrait.location}}</p>
+                    <p class="text-brown-300 text-base">Work history: {{portrait.previous_companies}}</p>
+                </div>
+            </div>
         </div>
-    </div>
-
 </div>
 {%endblock%}

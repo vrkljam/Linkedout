@@ -2,30 +2,20 @@
 {%block title%}****POSTS!!!****{%endblock%}
 {%block content%}
 <div class="flex text-center inline-flex ml-40">
-    <div>
-        <h2 class="ml-16">Posts:</h2>
-        <h3>{{profile.user_from_model}}</h3>
-        <h3>hello--looking for profile info</h3>
-        <h3>{{profile.is_retired}}</h3>
-    </div>
-
-    <div class="w-fit ml-32 flex inline-flex" >
+     <div class="w-fit ml-32 flex inline-flex" >
         <ul  >
             {%for post in posts%}
-            <!-- <li class="border-2 border-indigo-500 w-96"> -->
+                     <!-- <li class="border-2 border-indigo-500 w-96"> -->
             <li class="max-w-sm rounded overflow-hidden shadow-xl text-center ml-30 mt-5">
-                <a class='flex underline text-blue-600 hover:text-blue-800 visted:text-purple-600 text-center' href="{%url 'post_detail' pk=post.pk%}"><h3>Name of user: {{post.username}}</h3></a>
-                <p class="text-2xl">Post title: {{post.title}}</p>
+                <a class='flex underline text-blue-600 hover:text-blue-800 visted:text-purple-600 text-center' href="{%url 'post_detail' pk=post.pk%}"><h3>From: {{post.username}}</h3></a>
+                <p class="text-2xl">Title: {{post.title}}</p>
                 <p class="text-red-500 text-xs">Date of post: {{post.post_date}}</p>
                 <p class="">Post content: {{post.post_content}}</p>
                 <p>Name of user: {{post.username}}</p>
-                <p class="">location of user: {{post.location}}</p>
-            
+                            
             </li>
             {%endfor%}
         </ul>
     </div>
 </div>
 {%endblock%}
-
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quos vero consequatur voluptates? Maiores asperiores praesentium velit consequuntur quibusdam expedita repellendus beatae, deserunt perspiciatis quas libero quaerat voluptatem reprehenderit laboriosam facilis a voluptatibus quam nulla quos. Iure voluptatem quos quia ullam officiis nostrum autem explicabo quidem! Deleniti unde repellendus recusandae!</p>

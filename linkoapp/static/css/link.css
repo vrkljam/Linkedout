@@ -1,10 +1,4 @@
 
-
-* {
-    background-color:lightblue;
-   
-}
-
 @keyframes move {
     0% {
         transform: translateX(0px);
@@ -36,53 +30,7 @@
     animation-direction: alternate;
     animation-timing-function: ease-in;
    }
-#loginOut{
-    /* float:
-    background-color:
-    color: */
-}
-#homeContainer{
-    /* height: 100px;
-    width: 200px; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* border: 3px solid black;
-    background-color: gold; */
-}
 
-.new{
-    /* background-color: aqua;
-    border: 5px solid red;
-    display: flex;
-    flex-direction: column;
-    color:green; */
+#special{
+    background-color: orange;
 }
-.new2{
-    /* border: 5px solid black;
-    height: 50px;
-    width: 50px;
-    background-color: blue; */
-}
-
-.post-details-page{
-    /* border: 5px solid red;
-    width: 300px;
-    margin-left:50px; */
-
-}
-
-.post-title{
-    /* text-align: center;
-    font:bold;
-    margin-top: 0; */
-    
-}
-
-.redit-form{
-    /* color: black;
-    background-color: blueviolet; */
-}
-
-#baseTwo{
-    /* color: green; */
-   }
