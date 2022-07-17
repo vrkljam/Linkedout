@@ -10,37 +10,20 @@
 {%block content%}
 <div class="w-fit ml-32 flex inline-flex flex-col">
         <div class="flex justify-center">
-            <a class='underline text-blue-600 hover:text-blue-800 visted:text-purple-600' href="{% url 'post_edit' pk=post.pk%}"><h4>Edit this Post</h4></a>
-            <a class="underline text-blue-600 hover:text-blue-800 visted:text-purple-600 ml-5" href="{% url 'post_delete' pk=post.pk%}"><h4>Delete this Post</h4></a>
+            <a class='underline text-blue-600 hover:text-blue-800 visted:text-purple-600' href="{% url 'bucketlist_edit' pk=post.pk%}"><h4>Edit this Bucket list item</h4></a>
+            <a class="underline text-blue-600 hover:text-blue-800 visted:text-purple-600 ml-5" href="{% url 'bucketlist_delete' pk=post.pk%}"><h4>Delete this item</h4></a>
         </div>
 
         <div class="flex items-center justify-center mt-5">
             <div class="max-w-sm rounded overflow-hidden shadow-xl">
-                <h3 class="post-title">Post Title: {{post.title}}</h3>
-                <p class="text-red-500 text-xs">Date of Post: {{post.post_date}}</p>
-                <p>username: {{user.username}}</p>
+                <h3 class="post-title">Bucket List Title: {{bucketlist.title}}</h3>
+                <p class="text-red-500 text-xs">Date item added: {{bucketlist.created_date}}</p>
+                <p>username: {{bucketlist.user}}</p>
 
-                <p>Name of Poster: {{post.name_of_user}}</p>
+                <p>title: {{bucketlist.title}}</p>
                 <p>Content of Post: {{post.post_content}}</p>
             </div>
         </div>
 
-        <div class="max-w-sm rounded overflow-hidden shadow-lg mt-5 ml-5">
-            <p class="text-bold text-orange-500">Comments: </h3>
-                <div >
-                <ul >
-                    {% for comment in post.tacos.all %}
-                        <li class="max-w-sm rounded overflow-hidden shadow-lg mt-5">
-                            <a href="{%url 'comment_detail' pk=comment.pk%}">{{comment.author}}</a>
-                            <p>What they said: {{comment.content}}</p>
-                            <p>Date: {{comment.created_date}}</p>
-                        </li>
-                    {%endfor%} 
-                </ul> 
-            </div>
-        </div>
-        <div>
-        <a class="underline text-blue-600 hover:text-blue-800 visted:text-purple-600 ml-5" href="{%url 'comment_form'%}">Add to comment (+)</a>
-        </div>
 </div>
 {%endblock%}

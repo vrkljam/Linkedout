@@ -30,12 +30,15 @@ class CommentList(TemplateView):
         context['comments']=Comment.objects.all()
         return context
 
-class BucketList(TemplateView):
-    template_name='linkoapp/bucket_list.html'
+class BucketLists(TemplateView):
+    template_name = 'linkoapp/bucket_list.html'
 
     def get_context_data(self, **kwargs):
-        context= super().get_context_data(**kwargs)
+        context=super().get_context_data(**kwargs)
         context['buckets']=BucketList.objects.all()
+        return context
+
+
 
 class PortraitList(TemplateView):
     template_name = 'linkoapp/portrait_page.html'

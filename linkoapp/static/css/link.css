@@ -1,4 +1,4 @@
-
+*{background-color: lightblue;}
 @keyframes move {
     0% {
         transform: translateX(0px);
@@ -21,7 +21,7 @@
 }
 
 
-#base-h1{
+/* #base-h1{
     text-align: center;
     color:orange;
     animation-name: move;
@@ -29,8 +29,25 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-timing-function: ease-in;
-   }
+   } */
+
+#homeLink{
+   
+}
+
 
 #special{
     background-color: orange;
+}
+button {
+    background-color: rgb(0, 0, 255);
+    color: white;
+    padding: 10px 20px;
+    border: 3px solid black;
+    border-radius: 5%;
+
+
+}
+button:hover{
+    background-color: #3399FF;
 }

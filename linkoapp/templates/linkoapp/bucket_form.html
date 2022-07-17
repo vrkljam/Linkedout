@@ -1,3 +1,6 @@
+{% extends 'linkoapp/base.html'%}
+{%block title%}****Bucket List!****{%endblock%}
+{%block content%}
 <!--views/todos/new.hbs-->
 <!-- <h2>Add a new To Do</h2>
 <form action="/todos" method="POST">
@@ -9,3 +12,23 @@
   <a href="/todos" class="btn btn-secondary">Cancel</a>
 </form> -->
 
+<div class="w-full ml-32 flex inline-flex md:w-1/2 px-3 mb-6 md:mb-0">
+  <div class="'text-center">
+      <p class="text-center">New Bucket List Item </p>
+      <form class="rounded shadow-xl text-center ml-30 mt-5" method="POST">
+          {%csrf_token%}    
+      
+          <p class="text-purple-500">This is bucketlist.user : {{bucketlist.user}}</p>
+          <p class="text-purple-500">This is form.title : {{form.title}}</p>
+          <p class="text-purple-500">Check if completed : {{form.complete}}</p>
+        
+          <!-- <p>Post Title {{form.title}}</p>
+          <p class="text-start">Post Content {{form.post_content}}</p> -->
+
+          <button id="save-btn" class="bg-blue" type="submit">Save</button>
+
+      </form>
+  </div>
+</div>
+
+{%endblock%}
