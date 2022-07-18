@@ -11,21 +11,25 @@
     
       <ul  >
         {%for bucket in buckets%}
-            <li class="max-w-xl rounded overflow-hidden shadow-xl text-center ml-30 mt-5">
-              <div class="grid col-auto m-2">
-                <table class="">
-                  <tr class="ml-10">
-                  <th class="text-gray-400">Date Added</th>
-                  <th class="text-gray-400">Title</th>
-                  <th class="text-gray-400">Complete</th>
-                  <th class="text-gray-400">Edit</th>
-                  <th class="text-gray-400">Delete</th>
-                  </tr>
-                  <tr >
-
-                    <td class="text-xs">{{bucket.created_date}}</td>
-                    <td class="m-5">{{bucket.title}}</td>
-                    <td>{{bucket.complete}}</td>
+        <li class="max-w-xl rounded overflow-hidden shadow-xl text-center ml-30 mt-5">
+          <div class="grid col-auto m-2">
+            <table class="">
+              <tr class="ml-10">
+                <th class="text-gray-400">Date Added</th>
+                <th class="text-gray-400">Title</th>
+                <th class="text-gray-400">Complete</th>
+                <th class="text-gray-400">Edit</th>
+                <th class="text-gray-400">Delete</th>
+              </tr>
+              <tr >
+                
+                <td class="text-xs">{{bucket.created_date}}</td>
+                <td class="m-5">{{bucket.title}}</td>
+                {% if bucket.complete%}
+                    <td><i class="fa fa-check"></i></td>
+                {%else%}
+                    <td><i class="fa fa-spinner"></i></td>
+                {%endif%}
 
                    <td>    <a class='flex inline-flex text-blue-600 hover:text-blue-800 visted:text-purple-600 text-center' 
                       href="{%url 'bucket_edit' pk=bucket.pk %}"><i class="fa fa-edit"></i></a></td>
