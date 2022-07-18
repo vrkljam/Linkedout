@@ -5,10 +5,10 @@
     <div>
         <p>Edit this profile: {{portrait.first_name}} {{portarit.last_name}}</p>
         <div class=" w-full md:w-1/2 px-3">
-            <form class="w-full max-w-lg" method="POST">
+            <form class="w-full max-w-lg " method="POST">
                 {%csrf_token%} 
                 {{form.as_p}}
-                <button class='text-white bg-blue-600 hover:bg-blue-700 font-bold py-2 px-6 rounded mt-5' type="submit">Save</button>
+                <button class='text-white bg-blue-600 hover:bg-blue-700 font-bold py-2 px-6 rounded mt-5 mb-5' type="submit">Save</button>
 
             </form>
         </div>

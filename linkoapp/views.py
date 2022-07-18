@@ -129,9 +129,9 @@ class PortraitEdit(UpdateView):
 
 class BucketListEdit(UpdateView):
     model=Bucket
-    fields=['title','post_content']
+    fields=['title','complete']
     template_name= 'linkoapp/bucket_edit_form.html'
-    success_url='/'
+    success_url='/buckets/'
 
 # ----Delete views----
 

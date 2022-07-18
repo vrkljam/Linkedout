@@ -22,5 +22,5 @@ class CommentForm(forms.ModelForm):
 class BucketForm(forms.ModelForm):
     class Meta:
         model=Bucket
-        fields=('title',)
+        fields=('title','complete')
 

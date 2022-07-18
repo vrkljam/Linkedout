@@ -6,30 +6,42 @@
      <div  > -->
 <div class="flex text-center inline-flex ml-40">
   <div>
-    <p >Bucket List</p>
+    <p class="text-2xl">Bucket List</p>
     <a href="/buckets/new" class="underline text-blue-600 hover:text-blue-800 visted:text-purple-600">New List Item</a>
     
       <ul  >
         {%for bucket in buckets%}
+            <li class="max-w-xl rounded overflow-hidden shadow-xl text-center ml-30 mt-5">
+              <div class="grid col-auto m-2">
+                <table class="">
+                  <tr class="ml-10">
+                  <th class="text-gray-400">Date Added</th>
+                  <th class="text-gray-400">Title</th>
+                  <th class="text-gray-400">Complete</th>
+                  <th class="text-gray-400">Edit</th>
+                  <th class="text-gray-400">Delete</th>
+                  </tr>
+                  <tr >
 
-          <!-- {% if bucket.complete%}
-         <li class="max-w-sm rounded overflow-hidden shadow-xl text-center ml-30 mt-5">
-            <p>Date of Item: {{bucket.created_date}}</p>
-            <p>Title: {{bucket.title}}</p>
-            <p class="inline">Completed: {{bucket.complete}}</p>
-          </li>
-          {%else%} -->
-          <a class='flex underline text-blue-600 hover:text-blue-800 visted:text-purple-600 text-center' 
-          href="{%url 'bucket_detail' pk=bucket.pk %}">Click here to edit</a>
-          <li class="max-w-sm rounded overflow-hidden shadow-xl text-center ml-30 mt-5">
-              <p>Date of Item: {{bucket.created_date}}</p>
-              <p>Title: {{bucket.title}}</p>
-              <p>Completed: {{bucket.complete}}</p>
-          </li>   
-        </li>
-          <!-- {%endif%} -->
-        {%endfor%}
+                    <td class="text-xs">{{bucket.created_date}}</td>
+                    <td class="m-5">{{bucket.title}}</td>
+                    <td>{{bucket.complete}}</td>
+
+                   <td>    <a class='flex inline-flex text-blue-600 hover:text-blue-800 visted:text-purple-600 text-center' 
+                      href="{%url 'bucket_edit' pk=bucket.pk %}"><i class="fa fa-edit"></i></a></td>
+
+                    <td>    <a class='flex inline-flex text-blue-600 hover:text-blue-800 visted:text-purple-600 text-center' 
+                      href="{%url 'bucket_delete' pk=bucket.pk %}"><i class="fa fa-trash"></i></a></td>
+                      
+                  </tr>
+
+                </table>
+               </div>   
+            </li>
+            
+          {%endfor%}
         </ul>
+    
     </div>
   </div>
 
