@@ -6,20 +6,17 @@
 <div class="w-full ml-32 flex inline-flex md:w-1/2 px-3 mb-6 md:mb-0">
   <div class="'text-center">
       <p class="text-center">New Bucket List Item </p>
-      <form class="rounded shadow-xl text-center ml-30 mt-5" method="POST">
+      <form class="w-full max-w-lg rounded shadow-xl text-center ml-30 mt-5" method="POST">
           {%csrf_token%}    
-      
-          <p class="text-purple-500">This is bucketlist.user : {{bucketlist.user}}</p>
-          <p class="text-purple-500">This is form.title : {{form.title}}</p>
-          <p class="text-purple-500">Check if completed : {{form.complete}}</p>
-        
-          <!-- <p>Post Title {{form.title}}</p>
-          <p class="text-start">Post Content {{form.post_content}}</p> -->
-
-          <button class='flex justify-center underline text-blue-600 hover:text-blue-800 visted:text-purple-600 mt-10'  type="submit">Save</button>
+          <div class="flex-inline w-full md:w-1/2 px-3 mb-6">
+            <p >This is form.title : {{form.title}}</p>
+            <p >Check if completed : {{form.complete}}</p>
+        </div>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="submit">Save</button>
 
       </form>
   </div>
 </div>
 
 {%endblock%}
+

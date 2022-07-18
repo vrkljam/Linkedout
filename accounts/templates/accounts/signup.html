@@ -1,13 +1,18 @@
 {%extends 'linkoapp/base.html'%}
 {%block content%}
 {% load static%}
-<div class="w-fit ml-32 flex inline-flex">
-    <form class="w-full max-w-lg" method='POST' action="{%url 'signup' %}">
-        {%csrf_token%} 
-        {{form.as_p}}
-        {{form.first_rname}}
-        <input class='text-white bg-blue-600 hover:bg-blue-700 font-bold py-6 px-4 rounded' type="submit" value="Sign Up" name="" id="">
-        <input type="hidden" name="next" value='{{next}}' id="">
-    </form>
+
+<div class="w-full ml-32 flex inline-flex md:w-1/2 px-3 mb-6 md:mb-0">
+    <div >
+        <form class="rounded shadow-xl ml-30 mt-5" method='POST' action="{%url 'signup' %}">
+            {%csrf_token%} 
+            <p >{{form.as_p}}</p>
+            {{form.first_rname}}
+            <div class="flex justify-center">
+                <input class='text-white bg-blue-600 hover:bg-blue-700 font-bold py-4 px-4 rounded mt-5' type="submit" value="Sign Up" name="" id="">
+                <input type="hidden" name="next" value='{{next}}' id="">
+            </div>
+        </form>
+    </div>
 </div>
 {%endblock%}

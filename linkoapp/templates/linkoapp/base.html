@@ -40,10 +40,10 @@
         
         <div class="flex justify-end mr-10">
             {% if user.is_authenticated %} Welcome, {{user.username}} 
-                <a href="{%url 'logout'%}" class="text-primary ml-4">Logout</a>
+                <a class="text-blue-500 ml-5" href="{%url 'logout'%}" class="text-primary ml-4">Logout</a>
             {%else%}
-                <a href="{% url 'login'%}" class="text-primary ml-2">Login</a>
-                <a class='ml-10' href="{%url 'signup'%}" class="text-primary ml-2">Signup</a>
+                <a class="text-blue-500" href="{% url 'login'%}" >Login</a>
+                <a class='ml-10 text-blue-500' href="{%url 'signup'%}">Signup</a>
             {%endif%}
         </div>
     </nav>

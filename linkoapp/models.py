@@ -33,8 +33,8 @@ class Comment(models.Model):
     def __str__(self):
         return self.author
 
-class BucketList(models.Model):
-    user=models.ForeignKey(Portrait, on_delete=models.CASCADE, null=True)
+class Bucket(models.Model):
+    userP=models.ForeignKey(Portrait, on_delete=models.CASCADE, null=True)
     title=models.CharField(max_length=200)
     complete=models.BooleanField(default=False)
     created_date=models.DateTimeField(auto_now=True)

@@ -2,8 +2,10 @@
 {%block content%}
 <div class="w-fit ml-32 flex inline-flex flex-col">
         <div class="flex justify-center">
-            <a class='underline text-blue-600 hover:text-blue-800 visted:text-purple-600' href="{% url 'post_edit' pk=post.pk%}"><h4>Edit this Post</h4></a>
-            <a class="underline text-blue-600 hover:text-blue-800 visted:text-purple-600 ml-5" href="{% url 'post_delete' pk=post.pk%}"><h4>Delete this Post</h4></a>
+            <a class='underline text-blue-600 hover:text-blue-800 visted:text-purple-600' 
+            href="{% url 'post_edit' pk=post.pk%}"><h4>Edit this Post</h4></a>
+            <a class="underline text-blue-600 hover:text-blue-800 visted:text-purple-600 ml-5" 
+            href="{% url 'post_delete' pk=post.pk%}"><h4>Delete this Post</h4></a>
         </div>
 
         <div class="flex items-center justify-center mt-5">

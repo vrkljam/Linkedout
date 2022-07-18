@@ -8,13 +8,13 @@
                 {%csrf_token%} 
                 <div class="w-full md:w-1/2 px-3 mb-6">
                     <p>First Name:{{form.first_name}}</p>
-                    <p>Work history: {{form.previous_companies}}</p>
                     <p>Last Name:{{form.last_name}}</p>
+                    <p>Work history: {{form.previous_companies}}</p>
                     <p>Location: {{form.location}}</p>
                     <p>Email:{{form.email}}</p>
-                    <p>Photo: {{form.photo_url}}</p>
+                    <p>Photo URL: {{form.photo_url}}</p>
                 </div>
-            <button class='text-white bg-blue-600 hover:bg-blue-700 font-bold py-6 px-4 rounded' type="submit">Save</button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="submit">Save</button>
 
             </form>
         </div>

@@ -15,7 +15,6 @@ urlpatterns = [
     path('buckets/<int:pk>/', views.BuckListDetail.as_view(), name='bucket_detail'),
     
     path('posts/new', login_required(views.PostCreate.as_view()), name='post_form'),
-    # path('posts/new', views.post_create, name='post_create'),
     path('comments/new', login_required(views.CommentCreate.as_view()), name='comment_form'),
     path('portraits/new', login_required(views.PortraitCreate.as_view()), name='portrait_form'),
     path('buckets/new', login_required(views.BucketListCreate.as_view()), name='bucket_form'),
@@ -32,24 +31,3 @@ urlpatterns = [
 
 ]
 
-
-
-# class UserProfile(models.Model):
-#     user=models.OneToOneField(User, on_delete=models.CASCADE)
-#     location=models.CharField(max_length=100)
-
-#     def __str__(self):
-#         return self.user.username
-
-# class Profile(models.Model):
-
-#     is_retired=models.BooleanField(default=True)
-#     previous_companies=models.TextField()
-#     location=models.CharField(max_length=100)
-#     photo_url=models.TextField()
-
-
-#     def __str__(self):
-#         return str(self.location)
-    # class Meta:
-    #     ordering =['location']

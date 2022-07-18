@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from .models import Post, Comment, Portrait, BucketList
+from .models import Post, Comment, Portrait, Bucket
 from .forms import PostForm, CommentForm, PortraitForm
 from django.views import View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -35,7 +35,7 @@ class BucketLists(TemplateView):
 
     def get_context_data(self, **kwargs):
         context=super().get_context_data(**kwargs)
-        context['buckets']=BucketList.objects.all()
+        context['buckets']=Bucket.objects.all()
         return context
 
 
@@ -64,7 +64,7 @@ class PortraitDetail(DetailView):
     template_name='linkoapp/portrait_detail.html'
 
 class BuckListDetail(DetailView):
-    model=BucketList
+    model=Bucket
     template_name= 'linkoapp/bucket_detail.html'
 
 # ---Create views---------
@@ -91,7 +91,7 @@ class PortraitCreate(CreateView):
     success_url='/'
 
 class BucketListCreate(CreateView):
-    model=BucketList
+    model=Bucket
     fields=['title','complete']
     template_name='linkoapp/bucket_form.html'
     success_url='/'
@@ -128,9 +128,9 @@ class PortraitEdit(UpdateView):
     success_url='/profile/'
 
 class BucketListEdit(UpdateView):
-    model=BucketList
-    fields=['name_of_user','title','post_content']
-    template_name= 'linkoapp/post_edit_form.html'
+    model=Bucket
+    fields=['title','post_content']
+    template_name= 'linkoapp/bucket_edit_form.html'
     success_url='/'
 
 # ----Delete views----
@@ -151,7 +151,7 @@ class PortraitDelete(DeleteView):
     success_url='/'
 
 class BucketDelete(DeleteView):
-    model=BucketList
+    model=Bucket
     template_name='linkoapp/bucket_delete_form.html'
     success_url='/'
 
