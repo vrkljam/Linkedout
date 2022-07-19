@@ -1,0 +1,23 @@
+{%extends 'linkoapp/base.html'%} 
+{%block content%} 
+
+<div class="flex text-center inline-flex ml-40">
+    <div class="max-w-sm rounded overflow-hidden shadow-xl">
+        <p>Are you sure you want to delete: {{comment.post}}</p>
+        <form method="POST">
+            {%csrf_token%}
+
+                <button class="text-white text-center text-sm bg-red-600 hover:bg-blue-700 font-bold py-2 px-6 rounded mt-3" 
+                type="submit">Click here to delete</button>
+                <div class="mt-10">
+                <a class="underline text-blue-600 hover:text-blue-800 visted:text-purple-600" 
+                href="{% url 'comment_detail' pk=comment.pk %}">Or Return Back to this comment</a>
+                </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+{%endblock%}

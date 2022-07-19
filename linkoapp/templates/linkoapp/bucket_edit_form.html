@@ -1,0 +1,15 @@
+
+{% extends 'linkoapp/base.html'%}
+{%block content%}
+
+
+<div class="w-full ml-32 flex inline-flex md:w-1/2 px-3 mb-6">
+  
+    <form class="rounded shadow-xl text-center ml-30 mt-5" method="POST">
+      <p class="'text-center">Edit this Bucket list item: {{bucketlist.title}}</p>
+      {%csrf_token%} 
+      {{form.as_p}}
+      <button class="text-white bg-blue-600 hover:bg-blue-700 font-bold py-1 px-6 rounded" type="submit">Save</button>
+    </form>
+</div>
+{%endblock%}

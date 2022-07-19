@@ -1,0 +1,20 @@
+{% extends 'linkoapp/base.html'%}
+{%block content%}
+<div class="w-fit ml-32 flex inline-flex flex-col">
+        <div class="flex justify-center">
+            <a class='underline text-blue-600 hover:text-blue-800 visted:text-purple-600'
+             href="{% url 'bucket_edit' pk=buckets.pk %}"><h4>Edit this Bucket list item</h4></a>
+            <a class="underline text-blue-600 hover:text-blue-800 visted:text-purple-600 ml-5" 
+            href="{% url 'bucket_delete' pk=buckets.pk %}"><h4>Delete this item</h4></a>
+        </div>
+
+        <div class="flex items-center justify-center mt-5">
+            <div class="max-w-sm rounded overflow-hidden shadow-xl">
+                <p>username: {{buckets.userB}}</p>
+                <h3 class="post-title">Bucket List Title: {{buckets.title}}</h3>
+                <p class="text-red-500 text-xs">Date item added: {{buckets.created_date}}</p>
+            </div>
+        </div>
+
+</div>
+{%endblock%}

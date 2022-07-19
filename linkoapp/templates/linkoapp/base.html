@@ -1,0 +1,67 @@
+{% load tailwind_tags%}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% tailwind_css %}
+    <link rel="stylesheet" href="{% static 'css/link.css' %}">
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+    <title>LinkedOut {%block title%}{%endblock%}</title>
+</head>
+
+
+<body class="text-black-400 ml-10 mr-10">
+    <h1 class="text-white text-2xl text-center mt-10">Linked OUT!!</h1>
+    <p class="text-black-500 flex justify-center m-5 text-lg">A site celebrating those who paid their dues, And now it's time to PLAY!</p>
+ 
+    <nav class="relative 
+                w-full 
+                flex flex-wrap 
+                items-center 
+                justify-between 
+                py-4 shadow-lg 
+                navbar navbar-expand-lg 
+                navbar-light container 
+                mx-auto">
+        <div class="flex underline text-blue-600 hover:text-blue-800 visted:text-purple-600 ml-5">
+            
+            <a href="/" id="homeLink"class="ml-5">Home</a>
+            <a href="/posts/new" class="ml-5">New Post</a>
+            <a href="/profile" class="ml-5">Profiles</a>
+            <a href="/portraits/new" class="ml-5">New Profile</a>
+            <a href="/buckets/" class="ml-5">Bucket List</a>
+            <!-- <a href="/buckets/new" class="ml-5"> New Bucket</a> -->
+                        
+        </div>
+        
+        <div class="flex justify-end mr-10">
+            {% if user.is_authenticated %} Welcome, {{user.username}} 
+                <a class="text-blue-500 ml-5" href="{%url 'logout'%}" class="text-primary ml-4">Logout</a>
+            {%else%}
+                <a class="text-blue-500" href="{% url 'login'%}" >Login</a>
+                <a class='ml-10 text-blue-500' href="{%url 'signup'%}">Signup</a>
+            {%endif%}
+        </div>
+    </nav>
+
+    <div class="w-40 shadow-lg px-5 rounded-r-3xl inline-flex">
+        <div class='mt-10 '>
+            <ul class='flex flex-col '>
+                <a class="flex items-center text-lg py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-red-500 hover:bg-gray-100 transition duration-300 ease-in-out"  href="https://www.yahoo.com" target="_blank">Yahoo</a>
+                <li ><a class="flex items-center text-lg py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-red-500 hover:bg-gray-100 transition duration-300 ease-in-out" href="https://www.aarp.org" target="_blank">AARP</a></li>
+                <li ><a class="flex items-center text-lg py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-red-500 hover:bg-gray-100 transition duration-300 ease-in-out" href="https://www.nps.gov" target="_blank">National Parks</a></li>
+                <li ><a class="flex items-center text-lg py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-red-500 hover:bg-gray-100 transition duration-300 ease-in-out" href="https://www.google.com" target="_blank">Google</a></li>
+                <li ><a class="flex items-center text-lg py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-red-500 hover:bg-gray-100 transition duration-500 ease-in-out" href="" target="_blank">Games</a></li>
+            </ul>
+        </div>
+    </div>
+
+    {%block content %}{%endblock%}
+    
+</body>
+</html>
