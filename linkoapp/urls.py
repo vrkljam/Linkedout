@@ -5,9 +5,9 @@ from django.contrib.auth.decorators import login_required
 urlpatterns = [
     
     path('',views.PostList.as_view(), name='post_list'),
-    path('profile/',views.PortraitList.as_view(), name='portriat_page'),
+    path('profile/',login_required(views.PortraitList.as_view()), name='portriat_page'),
     path('comments/', views.CommentList.as_view(), name='comment_list'),
-    path('buckets/', views.BucketLists.as_view(), name='bucket_list'),
+    path('buckets/', login_required(views.BucketLists.as_view()), name='bucket_list'),
 
     path('posts/<int:pk>/', views.PostDetail.as_view(), name='post_detail'),
     path('comments/<int:pk>/', views.CommentDetail.as_view(), name='comment_detail'),

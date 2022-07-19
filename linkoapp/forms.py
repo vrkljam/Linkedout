@@ -1,6 +1,6 @@
 from dataclasses import fields
 from django import forms
-from .models import Post, Comment, Portrait, Bucket
+from .models import Post, Comment, Portrait, Buckets
 
 
 class PostForm(forms.ModelForm):
@@ -21,6 +21,6 @@ class CommentForm(forms.ModelForm):
 
 class BucketForm(forms.ModelForm):
     class Meta:
-        model=Bucket
+        model=Buckets
         fields=('title','complete')
 

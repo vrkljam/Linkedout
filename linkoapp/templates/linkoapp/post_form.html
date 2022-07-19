@@ -7,8 +7,10 @@
             <p class="text-center">New Post!! </p>
             <form class="rounded shadow-xl text-center ml-30 mt-5" method="POST">
                 {%csrf_token%}    
-            
+                            
+                     
                 <p class="text-purple-500">Logged in as: {{form.username }}</p>
+                
                 <p>Post Title {{form.title}}</p>
                 <p class="text-start">Post Content {{form.post_content}}</p>
 
