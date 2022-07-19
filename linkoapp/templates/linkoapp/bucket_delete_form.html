@@ -1,0 +1,21 @@
+  {%extends 'linkoapp/base.html'%} 
+  {% block content %} 
+
+  <div class="w-full ml-32 flex inline-flex md:w-1/2 px-6 mb-9 md:mb-0">
+    <div class="rounded shadow-xl text-center ml-30 mt-5">
+        <p class="text-center mt-3">Are you sure you want to delete? -- </p>
+        <p>{{bucket.title}}</p>
+        <div>
+            <form class="w-full ml-20 flex flex-col md:w-1/2 px-6 mb-9 md:mb-0" method="POST">
+                {% csrf_token %}
+                <button class="text-white text-center text-sm bg-red-600 hover:bg-blue-700 font-bold py-2 px-6 rounded mt-3" 
+                    type="submit">Click here to delete</button>
+                <a class="text-white text-sm bg-blue-600 hover:bg-blue-700 font-bold py-2 px-6 rounded mt-10 mb-2" 
+                href="{% url 'bucket_detail' pk=buckets.pk %}">Click here to cancel</a>
+        
+            </form>
+        </div>
+    </div>
+  </div>
+
+  {%endblock%}
