@@ -11,6 +11,7 @@ dj-database-url = "*"
 gunicorn = "*"
 django-cors-headers = "*"
 django-tailwind = "*"
+django-heroku = "*"
 
 [dev-packages]
 
