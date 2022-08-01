@@ -2,8 +2,8 @@
 
 ----------------
 
-![screenshot](![screenshot-profile-page-p4](https://user-images.githubusercontent.com/90342641/180319917-ec5a7649-485a-46a3-8446-6400f92f3118.png))
-![screenshot](![screenshot-main-page-p4](https://user-images.githubusercontent.com/90342641/180319958-af973194-8d34-443e-a6e4-e98410bf81e1.png))
+![screenshot](/images/screenshot-main-page-p4.png)
+![screenshot](/images/screenshot-profile-page-p4.png)
 
 
 **Link to the app:** [Click Here](https://linked-out-p4.herokuapp.com/)
