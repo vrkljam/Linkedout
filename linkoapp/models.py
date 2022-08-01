@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Portrait(models.Model):
 
-    user=models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    user=models.OneToOneField(User, on_delete=models.CASCADE, null=True, related_name='profile')
     location=models.CharField(max_length=100)
     first_name=models.CharField(max_length=50,null=True)
     last_name=models.CharField(max_length=50,null=True)
