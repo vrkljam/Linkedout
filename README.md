@@ -2,8 +2,8 @@
 
 ----------------
 
-![screenshot](/images/screenshot-main-page-p4.png)
-![screenshot](/images/screenshot-profile-page-p4.png)
+![screenshot](/images/screenshot-main-page-p4.jpg)
+![screenshot](/images/screenshot-profile-page-p4.jpg)
 
 
 **Link to the app:** [Click Here](https://linked-out-p4.herokuapp.com/)
