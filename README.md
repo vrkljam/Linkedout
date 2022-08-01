@@ -1,4 +1,4 @@
-# linkedout
+# LinkedOut
 
 ----------------
 
