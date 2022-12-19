@@ -30,7 +30,9 @@ DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = ['*']
 # RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME') if RENDER_EXTERNAL_HOSTNAME: ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
-
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 LOGIN_REDIRECT_URL='/'
@@ -93,12 +95,27 @@ CORS_ALLOW_ALL_ORIGINS =True
 # DATABASES = {
 #     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600),
 # }
+
+# From Render deploy section
+DATABASES = {
+    'default': dj_database_url.config(
+        # Feel free to alter this value to suit your needs.
+        # default='postgresql://postgres:postgres@localhost:5432/mysite',
+        conn_max_age=600
+    )
+}
+
+
+
+
 # DATABASES = {
 #     'default': dj_database_url.config(os.environ.get('DATABASE_URL'), conn_max_age=600),
 # }
-DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600),
-}
+
+# Below worked locally 
+# DATABASES = {
+#     'default': dj_database_url.config(conn_max_age=600),
+# }
 
 # older datbase line
 # 'default': dj_database_url.config(conn_max_age=600)
