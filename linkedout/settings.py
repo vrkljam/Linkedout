@@ -105,6 +105,7 @@ CORS_ALLOW_ALL_ORIGINS =True
 # From Render deploy section
 DATABASES = {
     'default': dj_database_url.config(
+        os.environ.get('DATABASE_URL2'),
         # Feel free to alter this value to suit your needs.
         # default='postgresql://postgres:postgres@localhost:5432/mysite',
         conn_max_age=600
