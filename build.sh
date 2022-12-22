@@ -3,8 +3,6 @@
 # exit on error
 set -o errexit  
 
-pipenv install
-
 pipenv install -r requirements.txt
 
 python3 manage.py collectstatic --no-input
