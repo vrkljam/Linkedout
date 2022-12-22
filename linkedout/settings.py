@@ -26,6 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
+# debug line from testdrivin.io site for deploying django-postgresql on render
+# DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
+
 # DEBUG = 'RENDER' not in os.environ 
 DEBUG = True
 
@@ -93,6 +97,7 @@ CORS_ALLOW_ALL_ORIGINS =True
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# database line from testdrivin.io site for deploying django-postgresql on render
 # DATABASES = {
 #     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600),
 # }
