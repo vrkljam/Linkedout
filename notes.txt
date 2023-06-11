@@ -1,0 +1,4 @@
+#****************
+for django restrict who can post and assign logged to the post Create
+"How To Restrict Who Can Make Blog Posts - Django Blog #17"
+https://www.youtube.com/watch?v=TAH01Iy5AuE

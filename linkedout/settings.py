@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
-import dj_database_url
+import dj_database_url 
 from pathlib import Path
 
 
@@ -103,21 +103,21 @@ CORS_ALLOW_ALL_ORIGINS =True
 # }
 
 # From Render deploy section
-DATABASES = {
-    'default': dj_database_url.config(
-        # Feel free to alter this value to suit your needs.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
-        conn_max_age=600
-    )
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         # Feel free to alter this value to suit your needs.
+#         default='postgresql://postgres:postgres@localhost:5432/mysite',
+#         conn_max_age=600
+#     )
+# }
 # DATABASES = {
 #     'default': dj_database_url.config(os.environ.get('DATABASE_URL'), conn_max_age=600),
 # }
 
 # Below worked locally 
-# DATABASES = {
-#     'default': dj_database_url.config(conn_max_age=600),
-# }
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=600),
+}
 
 # older datbase line
 # 'default': dj_database_url.config(conn_max_age=600)

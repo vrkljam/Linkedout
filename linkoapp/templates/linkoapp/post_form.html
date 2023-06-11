@@ -7,18 +7,12 @@
             <p class="text-center">New Post!! </p>
             <form class="rounded shadow-xl text-center ml-30 mt-5" method="POST">
                 {%csrf_token%}    
-                            {{form.as_p}}
+                {{form.as_p}}
                      
-                {% comment %} <p class="text-purple-500">!!Logged in as: {{form.username }}</p>
-                
-                <p>Post Title {{form.title}}</p>
-                <p class="text-start">Post Content {{form.post_content}}</p> {% endcomment %}
-
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full" type="submit">Save</button>
                 
                  <script>
                     let name = '{{user.id}}';
-                    let name2 ='{{user.username}}';
                     document.getElementById('blah').value=name
                 </script> 
 
