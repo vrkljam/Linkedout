@@ -1,12 +1,15 @@
-from dataclasses import fields
 from django import forms
 from .models import Post, Comment, Portrait, Buckets
 
 
 class PostForm(forms.ModelForm):
+    
     class Meta:
         model =Post
-        fields=('username','title','post_content')
+        fields=('username','title','post_content',)
+        widgets = {
+            'username': forms.TextInput(attrs={'value':'', 'id':'blah','placeholder':'user nam', 'type':'hidden'}),
+        }
         
         
 class PortraitForm(forms.ModelForm):
@@ -24,3 +27,6 @@ class BucketForm(forms.ModelForm):
         model=Buckets
         fields=('title','complete')
 
+
+
+# 'value':'', 'id':'blah', 'type':'hidden', 

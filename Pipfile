@@ -12,6 +12,7 @@ gunicorn = "*"
 django-cors-headers = "*"
 django-tailwind = "*"
 django-heroku = "*"
+psycopg2 = "*"
 
 [dev-packages]
 

@@ -70,11 +70,12 @@ class BuckListDetail(DetailView):
 
 class PostCreate(CreateView):
     model= Post
-    fields=['username','title','post_content']
+    form_class= PostForm
     template_name= 'linkoapp/post_form.html'
     success_url='/'
 
     # <input type="hidden" name="username" value="{{'form.username':user.username%}}">
+    # fields=['username','title','post_content']
 
 class CommentCreate(CreateView):
     model= Comment
